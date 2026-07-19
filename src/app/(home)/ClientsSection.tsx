@@ -10,10 +10,10 @@ import Image from 'next/image';
 import SectionHeading from '@/components/common/SectionHeading';
 
 const clients = [
-  { src: '/assets/goldlac-logo.jpg', alt: 'Goldlac', href: 'https://paintfactory.lk' },
-  { src: '/assets/higrow-logo.png', alt: 'K Grow Lanka', href: 'https://higrowlanka.lk' },
-  { src: '/assets/samtes-logo.png', alt: 'Samtes' },
-  { src: '/assets/slaughter-logo.jpg', alt: 'Slaughter' },
+  { src: '/assets/clients/goldlac-logo.jpg', alt: 'Goldlac', href: 'https://paintfactory.lk' },
+  { src: '/assets/clients/higrow-logo.png', alt: 'K Grow Lanka', href: 'https://higrowlanka.lk' },
+  { src: '/assets/clients/samtes-logo.png', alt: 'Samtes' },
+  { src: '/assets/clients/slaughter-logo.jpg', alt: 'Slaughter' },
 ];
 
 export default function ClientsSection() {

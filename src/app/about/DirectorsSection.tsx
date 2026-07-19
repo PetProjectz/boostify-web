@@ -12,7 +12,7 @@ import { brand } from '@/brand';
 
 const directors = [
   {
-    photo: '/assets/akeshala.jpg',
+    photo: '/assets/team/akeshala.jpg',
     name: 'Akeshala Marasinghe',
     role: 'Co-Founder & Director',
     degree: 'BSc. (Hons) Electronic and Telecommunication Engineering, University of Moratuwa',
@@ -20,7 +20,7 @@ const directors = [
       'With a strong foundation in telecommunications engineering, Akeshala brings technical precision and innovative thinking to every project. His expertise in systems architecture ensures our digital solutions are built on strong technological foundations.',
   },
   {
-    photo: '/assets/randula.jpg',
+    photo: '/assets/team/randula.jpg',
     name: 'Randula Arukgoda',
     role: 'Co-Founder & Director',
     degree: 'BSc. (Hons) Electronic and Telecommunication Engineering, CINEC',
@@ -28,7 +28,7 @@ const directors = [
       "Randula's engineering background combined with strategic marketing insights drives our data-driven approach. His analytical mindset ensures every campaign is optimized for maximum performance and measurable ROI.",
   },
   {
-    photo: '/assets/hasila.jpg',
+    photo: '/assets/team/hasila.jpg',
     name: 'Hasila Heshan',
     role: 'Co-Founder & Director',
     degree: '5+ years experience with leading television companies in Sri Lanka',

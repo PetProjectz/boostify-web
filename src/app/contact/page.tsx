@@ -112,7 +112,7 @@ export default function Contact() {
                     borderRadius: '18px',
                     color: '#fff',
                     overflow: 'hidden',
-                    background: `linear-gradient(180deg, rgba(2,10,22,0.72), rgba(2,10,22,0.95)), url('/assets/social-media.webp') center/cover`,
+                    background: `linear-gradient(180deg, rgba(2,10,22,0.72), rgba(2,10,22,0.95)), url('/assets/services/social-media.webp') center/cover`,
                   }}
                 >
                   <Typography
