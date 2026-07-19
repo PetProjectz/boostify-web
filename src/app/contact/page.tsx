@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const contactItems = [
   { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Colombo, Sri Lanka' },
   { icon: <EmailRoundedIcon />, title: 'Email', value: 'info@boostify.lk', href: 'mailto:info@boostify.lk' },
-  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 77 712 3456', href: 'tel:+94777123456' },
+  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+940713598928' },
   { icon: <AccessTimeRoundedIcon />, title: 'Business Hours', value: 'Monday - Friday, 9:00 AM - 6:00 PM' },
 ];
 
@@ -112,7 +112,7 @@ export default function Contact() {
                     borderRadius: '18px',
                     color: '#fff',
                     overflow: 'hidden',
-                    background: `linear-gradient(180deg, rgba(2,10,22,0.72), rgba(2,10,22,0.95)), url('/assets/social-media.png') center/cover`,
+                    background: `linear-gradient(180deg, rgba(2,10,22,0.72), rgba(2,10,22,0.95)), url('/assets/services/social-media.webp') center/cover`,
                   }}
                 >
                   <Typography

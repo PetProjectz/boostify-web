@@ -59,7 +59,7 @@ export default function Footer() {
         <Grid container spacing={4} sx={{ pb: 3 }}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
-              <Image src="/assets/boostify-logo.png" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
+              <Image src="/assets/brand/boostify-logo.webp" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
             </Box>
             <Typography sx={{ ...linkSx, maxWidth: 320 }}>
               We engineer digital transformation through cutting-edge technology, intelligent
@@ -91,8 +91,8 @@ export default function Footer() {
             <Link href="mailto:info@boostify.lk" sx={linkSx}>
               info@boostify.lk
             </Link>
-            <Link href="tel:+94777123456" sx={linkSx}>
-              +94 77 712 3456
+            <Link href="tel:+94713598928" sx={linkSx}>
+              +94 71 359 8928
             </Link>
             <Stack direction="row" spacing={1} sx={{ mt: 1.5 }}>
               {socials.map((s) => (

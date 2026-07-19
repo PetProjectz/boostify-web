@@ -37,7 +37,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
       <Fab
         color="primary"
         aria-label="WhatsApp"
-        href="https://wa.me/94777123456"
+        href="https://wa.me/94713598928"
         target="_blank"
         rel="noopener noreferrer"
         sx={{
