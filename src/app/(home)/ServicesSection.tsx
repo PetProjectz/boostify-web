@@ -22,13 +22,13 @@ const services = [
       'Secure and scalable blockchain powered solutions for digital transactions, record management, transparency, and next-generation business operations.',
   },
   {
-    image: '/assets/social-media.webp',
+    image: '/assets/services/social-media.webp',
     title: 'Performance Marketing & Social Commerce',
     description:
       'Turn clicks into customers and scale your revenue. We move past vanity metrics like "likes" to focus on what matters: leads and sales. We design data-driven ad campaigns and high-converting WhatsApp funnels that directly impact your bottom line.',
   },
   {
-    image: '/assets/digital-marketing.webp',
+    image: '/assets/services/digital-marketing.webp',
     title: 'Advanced Search & Discoverability (SEO + GEO)',
     description:
       'Be found exactly when your customers are looking. We ensure your business dominates search results—whether someone is searching on Google, asking AI engines like ChatGPT, or looking for local services on Maps.',
