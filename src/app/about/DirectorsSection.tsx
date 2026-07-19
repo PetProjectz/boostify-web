@@ -15,9 +15,9 @@ const directors = [
     photo: '/assets/team/akeshala.jpg',
     name: 'Akeshala Marasinghe',
     role: 'Co-Founder & Director',
-    degree: 'BSc. (Hons) Electronic and Telecommunication Engineering, University of Moratuwa',
+    degree: 'BSc. (Hons) Engineering, University of Moratuwa',
     description:
-      'With a strong foundation in telecommunications engineering, Akeshala brings technical precision and innovative thinking to every project. His expertise in systems architecture ensures our digital solutions are built on strong technological foundations.',
+      'With over 5 years of experience in the software industry across leading local and foreign companies, Akeshala brings technical precision and innovative thinking to every project. His expertise in systems architecture ensures our digital solutions are built on strong technological foundations.',
   },
   {
     photo: '/assets/team/randula.jpg',
