@@ -96,15 +96,6 @@ export default function NavBar() {
               alignItems: 'center',
             }}
           >
-            <Button
-              variant="outlined"
-              color="primary"
-              size="small"
-              component={NextLink}
-              href="/contact"
-            >
-              Get In Touch
-            </Button>
             <ColorModeIconDropdown />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
@@ -147,19 +138,6 @@ export default function NavBar() {
                     {item.label}
                   </MenuItem>
                 ))}
-                <Divider sx={{ my: 1 }} />
-                <MenuItem>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    fullWidth
-                    component={NextLink}
-                    href="/contact"
-                    onClick={toggleDrawer(false)}
-                  >
-                    Get In Touch
-                  </Button>
-                </MenuItem>
               </Box>
             </Drawer>
           </Box>
