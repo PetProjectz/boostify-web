@@ -49,7 +49,7 @@ export default function Contact() {
       <PageHero
         tag="Contact Us"
         title="Let's Work Together"
-        subtitle="Ready to boost your digital presence? Get in touch with us today test."
+        subtitle="Ready to boost your digital presence? Get in touch with us today."
       />
 
       <Box sx={{ py: { xs: 6, sm: 7 }, bgcolor: 'background.default' }}>
