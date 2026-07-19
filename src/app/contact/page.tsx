@@ -150,8 +150,6 @@ export default function Contact() {
           </Grid>
         </Container>
       </Box>
-
-      <CtaSection />
     </>
   );
 }
