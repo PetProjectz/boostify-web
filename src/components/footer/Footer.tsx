@@ -59,7 +59,7 @@ export default function Footer() {
         <Grid container spacing={4} sx={{ pb: 3 }}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
-              <Image src="/assets/boostify-logo.webp" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
+              <Image src="/assets/brand/boostify-logo.webp" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
             </Box>
             <Typography sx={{ ...linkSx, maxWidth: 320 }}>
               We engineer digital transformation through cutting-edge technology, intelligent

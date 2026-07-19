@@ -131,7 +131,7 @@ function HeroSection() {
                 zIndex: 1,
               }}
             >
-              <Image src="/assets/hero-1.webp" alt="Digital solutions" fill sizes="(max-width: 900px) 100vw, 40vw" />
+              <Image src="/assets/hero/hero-1.webp" alt="Digital solutions" fill sizes="(max-width: 900px) 100vw, 40vw" />
             </Box>
             {/* Top card */}
             <Box
@@ -145,7 +145,7 @@ function HeroSection() {
                 zIndex: 2,
               }}
             >
-              <Image src="/assets/hero-2.webp" alt="Creative studio" fill sizes="20vw" />
+              <Image src="/assets/hero/hero-2.webp" alt="Creative studio" fill sizes="20vw" />
             </Box>
             {/* Bottom card */}
             <Box
@@ -159,7 +159,7 @@ function HeroSection() {
                 zIndex: 2,
               }}
             >
-              <Image src="/assets/hero-3.webp" alt="Technology" fill sizes="20vw" />
+              <Image src="/assets/hero/hero-3.webp" alt="Technology" fill sizes="20vw" />
             </Box>
           </Box>
         </Box>

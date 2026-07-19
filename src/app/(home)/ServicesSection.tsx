@@ -10,13 +10,13 @@ import { brand } from '@/brand';
 
 const services = [
   {
-    image: '/assets/web-development.webp',
+    image: '/assets/services/web-development.webp',
     title: 'Web and Mobile Application Development',
     description:
       'Advanced web, mobile, and AI application development leveraging modern frameworks, machine learning, cloud technologies, and intelligent automation to create secure, scalable, and high-performance digital solutions.',
   },
   {
-    image: '/assets/blockchain.webp',
+    image: '/assets/services/blockchain.webp',
     title: 'Blockchain & Digital Ledger Solutions',
     description:
       'Secure and scalable blockchain powered solutions for digital transactions, record management, transparency, and next-generation business operations.',
