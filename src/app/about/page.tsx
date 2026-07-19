@@ -1,32 +1,31 @@
 import * as React from 'react';
+import type { Metadata } from 'next';
 
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import NextLink from 'next/link';
+import PageHero from '@/components/common/PageHero';
+import StorySection from '@/app/about/StorySection';
+import DirectorsSection from '@/app/about/DirectorsSection';
+import ExpertiseSection from '@/app/about/ExpertiseSection';
+import IndustriesSection from '@/app/about/IndustriesSection';
+import CtaSection from '@/components/common/CtaSection';
+
+export const metadata: Metadata = {
+  title: 'About Us - Boostify',
+  description: 'We help businesses grow, connect, and succeed in the digital world.',
+};
 
 export default function About() {
   return (
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI - Next.js example in TypeScript
-        </Typography>
-        <Box sx={{ maxWidth: 'sm' }}>
-          <Button variant="contained" component={NextLink} href="/">
-            Go to the home page
-          </Button>
-        </Box>
-      </Box>
-    </Container>
+    <>
+      <PageHero
+        tag="About Us"
+        title="About Boostify"
+        subtitle="We help businesses grow, connect, and succeed in the digital world."
+      />
+      <StorySection />
+      <DirectorsSection />
+      <ExpertiseSection />
+      <IndustriesSection />
+      <CtaSection />
+    </>
   );
 }

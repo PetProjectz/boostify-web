@@ -1,205 +1,124 @@
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
-import InputLabel from '@mui/material/InputLabel';
 import Link from '@mui/material/Link';
+import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Image from 'next/image';
 
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
 
-// import SitemarkIcon from './SitemarkIcon';
 import Copyright from '@/components/footer/Copyright';
+import { brand } from '@/brand';
+
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const services = [
+  'Web & Mobile Application Development',
+  'Advanced Search & Discoverability (SEO + GEO)',
+  'Performance Marketing & Social Commerce',
+  'Blockchain & Digital Ledger Solutions',
+];
+
+const socials = [
+  { icon: <FacebookIcon fontSize="small" />, href: 'https://www.facebook.com/share/1HUMUKM9MX/?mibextid=wwXIfr', label: 'Facebook' },
+  { icon: <InstagramIcon fontSize="small" />, href: 'https://instagram.com/boostify.lk', label: 'Instagram' },
+  { icon: <LinkedInIcon fontSize="small" />, href: 'https://www.linkedin.com/company/boostifylk/', label: 'LinkedIn' },
+];
+
+const headingSx = { color: '#fff', fontSize: 15, fontWeight: 900, mb: 1.25 } as const;
+const linkSx = {
+  color: 'rgba(255,255,255,0.7)',
+  fontSize: 13,
+  lineHeight: 1.8,
+  display: 'block',
+  '&:hover': { color: brand.gold2 },
+} as const;
 
 export default function Footer() {
   return (
-    <>
-      <Divider />
-      <Container
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: { xs: 4, sm: 8 },
-          py: { xs: 8, sm: 10 },
-          textAlign: { sm: 'center', md: 'left' },
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            width: '100%',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 4,
-              minWidth: { xs: '100%', sm: '60%' },
-            }}
-          >
-            <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-              {/* <SitemarkIcon /> */}
-              <Typography variant="body2" gutterBottom sx={{ fontWeight: 600, mt: 2 }}>
-                Join the newsletter
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-                Subscribe for weekly updates. No spams ever!
-              </Typography>
-              <InputLabel htmlFor="email-newsletter">Email</InputLabel>
-              <Stack direction="row" spacing={1} useFlexGap>
-                <TextField
-                  id="email-newsletter"
-                  hiddenLabel
-                  size="small"
-                  variant="outlined"
-                  fullWidth
-                  aria-label="Enter your email address"
-                  placeholder="Your email address"
-                  slotProps={{
-                    htmlInput: {
-                      autoComplete: 'off',
-                      'aria-label': 'Enter your email address',
-                    },
-                  }}
-                  sx={{ width: '250px' }}
-                />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  sx={{ flexShrink: 0 }}
-                >
-                  Subscribe
-                </Button>
-              </Stack>
+    <Box
+      component="footer"
+      sx={{
+        color: '#fff',
+        pt: 4,
+        background: `radial-gradient(circle at 0% 0%, ${brand.gold}14, transparent 24%), linear-gradient(180deg, ${brand.navyDeep} 0%, #030a15 100%)`,
+      }}
+    >
+      <Container>
+        <Grid container spacing={4} sx={{ pb: 3 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+            <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
+              <Image src="/assets/boostify-logo.png" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
             </Box>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Product
+            <Typography sx={{ ...linkSx, maxWidth: 320 }}>
+              We engineer digital transformation through cutting-edge technology, intelligent
+              automation, and data-driven innovation.
             </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
-              Features
+          </Grid>
+
+          <Grid size={{ xs: 6, sm: 3, md: 2 }}>
+            <Typography sx={headingSx}>Quick Links</Typography>
+            {quickLinks.map((link) => (
+              <Link key={link.href} component={NextLink} href={link.href} sx={linkSx}>
+                {link.label}
+              </Link>
+            ))}
+          </Grid>
+
+          <Grid size={{ xs: 6, sm: 3, md: 3 }}>
+            <Typography sx={headingSx}>Services</Typography>
+            {services.map((s) => (
+              <Typography key={s} sx={linkSx}>
+                {s}
+              </Typography>
+            ))}
+          </Grid>
+
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+            <Typography sx={headingSx}>Contact Info</Typography>
+            <Typography sx={linkSx}>Colombo, Sri Lanka</Typography>
+            <Link href="mailto:info@boostify.lk" sx={linkSx}>
+              info@boostify.lk
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Testimonials
+            <Link href="tel:+94777123456" sx={linkSx}>
+              +94 77 712 3456
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Highlights
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Pricing
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              FAQs
-            </Link>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Company
-            </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
-              About us
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Careers
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Press
-            </Link>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Legal
-            </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
-              Terms
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Privacy
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Contact
-            </Link>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            pt: { xs: 4, sm: 8 },
-            width: '100%',
-            borderTop: '1px solid',
-            borderColor: 'divider',
-          }}
-        >
-          <div>
-            <Link color="text.secondary" variant="body2" href="#">
-              Privacy Policy
-            </Link>
-            <Typography sx={{ display: 'inline', mx: 0.5, opacity: 0.5 }}>
-              &nbsp;•&nbsp;
-            </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
-              Terms of Service
-            </Link>
-            <Copyright />
-          </div>
-          <Stack
-            direction="row"
-            spacing={1}
-            useFlexGap
-            sx={{ justifyContent: 'left', color: 'text.secondary' }}
-          >
-            <IconButton
-              color="inherit"
-              size="small"
-              href="https://x.com/MaterialUI"
-              aria-label="X"
-              sx={{ alignSelf: 'center' }}
-            >
-              <TwitterIcon />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              size="small"
-              href="https://www.linkedin.com/company/mui/"
-              aria-label="LinkedIn"
-              sx={{ alignSelf: 'center' }}
-            >
-              <LinkedInIcon />
-            </IconButton>
-          </Stack>
+            <Stack direction="row" spacing={1} sx={{ mt: 1.5 }}>
+              {socials.map((s) => (
+                <IconButton
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  aria-label={s.label}
+                  size="small"
+                  sx={{
+                    color: '#fff',
+                    border: `1px solid ${brand.gold}`,
+                    '&:hover': { backgroundColor: brand.gold, color: brand.onGold },
+                  }}
+                >
+                  {s.icon}
+                </IconButton>
+              ))}
+            </Stack>
+          </Grid>
+        </Grid>
+
+        <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.07)', py: 1.5, textAlign: 'center' }}>
+          <Copyright />
         </Box>
       </Container>
-    </>
+    </Box>
   );
 }

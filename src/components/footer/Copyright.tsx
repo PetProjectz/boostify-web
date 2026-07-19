@@ -1,17 +1,11 @@
 import * as React from 'react';
 
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 export default function Copyright() {
   return (
-    <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-      {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/">
-        Sitemark
-      </Link>
-      &nbsp;
-      {new Date().getFullYear()}
+    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.55)', fontSize: 13 }}>
+      © {new Date().getFullYear()} Boostify. All rights reserved.
     </Typography>
   );
 }

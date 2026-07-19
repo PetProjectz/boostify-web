@@ -1,10 +1,12 @@
 "use client";
 
 import { alpha, createTheme, PaletteColor } from "@mui/material/styles";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const roboto = Roboto({
-    weight: ["300", "400", "500", "700"],
+import { brand } from "@/brand";
+
+const inter = Inter({
+    weight: ["400", "500", "600", "700", "800", "900"],
     subsets: ["latin"],
     display: "swap",
 });
@@ -31,8 +33,16 @@ const theme = createTheme({
     cssVariables: {
         colorSchemeSelector: "class",
     },
+    shape: {
+        borderRadius: 10,
+    },
     typography: {
-        fontFamily: roboto.style.fontFamily,
+        fontFamily: inter.style.fontFamily,
+        h1: { fontWeight: 900, letterSpacing: "-0.05em", lineHeight: 1.02 },
+        h2: { fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.12 },
+        h3: { fontWeight: 900, lineHeight: 1.2 },
+        h4: { fontWeight: 800 },
+        button: { fontWeight: 800, textTransform: "none" },
     },
     components: {
         MuiAlert: {
@@ -49,10 +59,21 @@ const theme = createTheme({
                 },
             },
         },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                    fontWeight: 900,
+                },
+            },
+        },
     },
     palette: {
         primary: {
-            main: "#2196f3",
+            main: brand.gold,
+            light: brand.gold2,
+            dark: brand.goldDark,
+            contrastText: brand.onGold,
         },
         secondary: {
             main: "#9e9e9e",

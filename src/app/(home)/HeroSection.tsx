@@ -3,130 +3,166 @@
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Grow from '@mui/material/Grow';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import { ThemeMode } from '@/contexts/ThemeContext';
-import { useTheme } from '@mui/material/styles';
-import useThemeContext from '@/hooks/useThemeContext';
+import { brand } from '@/brand';
+
+const heroPoints = [
+  'Premium digital strategy and execution',
+  'Modern branding, media, and technology solutions',
+  'Built for startups, enterprises, and growing brands',
+];
+
+const cardBaseSx = {
+  position: 'absolute',
+  overflow: 'hidden',
+  borderRadius: '22px',
+  border: `1px solid ${brand.gold}73`,
+  background: 'rgba(255,255,255,0.04)',
+  boxShadow: '0 24px 60px rgba(0,0,0,0.28)',
+  '& img': { objectFit: 'cover' as const, transition: 'transform 0.5s ease' },
+  '&:hover img': { transform: 'scale(1.05)' },
+};
 
 function HeroSection() {
-  const { themeMode } = useThemeContext();
-  const isDarkMode = themeMode === ThemeMode.DARK;
-  const [imageLoaded, setImageLoaded] = React.useState(false);
-
-  const theme = useTheme();
-
   return (
     <Box
       id="hero"
       sx={{
-        width: '100%',
-        minHeight: '100vh',
-        backgroundRepeat: 'no-repeat',
-        backgroundImage: isDarkMode
-          ? `radial-gradient(ellipse 80% 50% at 50% -20%, ${theme.getAlphaColor('primary', 0.5, 'dark')}, transparent)`
-          : `radial-gradient(ellipse 80% 50% at 50% -20%, ${theme.getAlphaColor('primary', 0.6, 'light')}, transparent)`,
+        position: 'relative',
+        overflow: 'hidden',
+        color: '#fff',
+        borderBottom: `5px solid ${brand.gold}`,
+        background: `radial-gradient(circle at 15% 20%, ${brand.gold}1f, transparent 24%), radial-gradient(circle at 85% 75%, ${brand.gold}14, transparent 28%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navySoft} 100%)`,
       }}
     >
-      <Container
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
-        }}
-      >
-        <Stack
-          spacing={2}
-          useFlexGap
-          sx={{ alignItems: 'center', width: { xs: '100%', sm: '70%' } }}
+      <Container>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1.05fr 0.95fr' },
+            gap: { xs: 5, md: 8 },
+            alignItems: 'center',
+            minHeight: { md: 720 },
+            pt: { xs: 16, md: 18 },
+            pb: { xs: 8, md: 10 },
+          }}
         >
-          <Typography
-            variant="h1"
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              alignItems: 'center',
-              fontSize: 'clamp(3rem, 10vw, 3.5rem)',
-            }}
-          >
-            Glazyara&nbsp;
+          {/* Content */}
+          <Box>
             <Typography
-              component="span"
-              variant="h1"
+              component="p"
               sx={{
-                fontSize: 'inherit',
-                color: isDarkMode ? 'primary.main' : 'primary.dark',
+                color: brand.gold,
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                fontSize: 13,
+                letterSpacing: '2px',
+                mb: 1,
               }}
             >
-              Reach
+              Premium Digital Innovation
             </Typography>
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: 'center',
-              color: 'text.primary',
-              width: { sm: '100%', md: '80%' },
-            }}
-          >
-            We Help Brands Grow Smarter
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: 'center',
-              color: 'text.secondary',
-              width: { sm: '100%', md: '80%' },
-            }}
-          >
-            Boost your visibility, drive real engagement, and turn clicks into customers.
-          </Typography>
-        </Stack>
-        <Grow in={imageLoaded} timeout={600}>
-          <Box
-            id="image"
-            sx={{
-              alignSelf: 'center',
-              width: '100%',
-              height: 400,
-              marginTop: 8,
-              borderRadius: 1,
-              outline: '6px solid',
-              outlineColor: isDarkMode ? theme.getAlphaColor('primary', 0.15, 'dark') : theme.getAlphaColor('primary', 0.15, 'light'),
-              border: '1px solid',
-              borderColor: isDarkMode ? 'grey.700' : 'grey.200',
-              boxShadow: isDarkMode ? `0 0 24px 12px ${theme.getAlphaColor('primary', 0.3, 'dark')}` : `0 0 12px 8px ${theme.getAlphaColor('primary', 0.3, 'light')}`,
-              position: 'relative',
-              overflow: 'hidden',
-              '@media (min-width: 600px)': {
-                marginTop: 10,
-                height: 700,
-              },
-            }}
-          >
-            <Image
-              src={
-                isDarkMode
-                  ? `${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/screenshots/material-ui/getting-started/templates/dashboard-dark.jpg`
-                  : `${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/screenshots/material-ui/getting-started/templates/dashboard.jpg`
-              }
-              alt="Hero Image"
-              fill
-              style={{
-                objectFit: 'cover',
-              }}
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-              onLoad={() => setImageLoaded(true)}
-            />
+            <Typography
+              variant="h1"
+              sx={{ fontSize: 'clamp(42px, 7vw, 78px)', lineHeight: 0.98, letterSpacing: '-0.07em', mb: 2.5, maxWidth: 760 }}
+            >
+              We Build Powerful Digital Brands For The Modern Future
+            </Typography>
+            <Typography sx={{ color: 'rgba(255,255,255,0.84)', fontSize: 19, maxWidth: 660, mb: 3.5 }}>
+              Boostify combines technology, strategy, and creative excellence to help ambitious
+              businesses grow faster, stand out stronger, and lead confidently in the digital world.
+            </Typography>
+
+            <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 2 }}>
+              <Button
+                component={NextLink}
+                href="/contact"
+                variant="contained"
+                color="primary"
+                sx={{ minHeight: 48, px: 3.5, background: `linear-gradient(180deg, ${brand.goldSoft}, ${brand.gold})` }}
+              >
+                Get Started
+              </Button>
+              <Button
+                href="#services"
+                variant="outlined"
+                sx={{ minHeight: 48, px: 3.5, color: brand.gold2, borderColor: brand.gold, '&:hover': { background: brand.gold, color: brand.onGold, borderColor: brand.gold } }}
+              >
+                Explore Services
+              </Button>
+            </Stack>
+
+            <Stack spacing={1.75} sx={{ mt: 3.5, maxWidth: 560 }}>
+              {heroPoints.map((point) => (
+                <Stack key={point} direction="row" spacing={1.5} alignItems="center">
+                  <Box
+                    sx={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: '50%',
+                      flex: '0 0 auto',
+                      background: `linear-gradient(180deg, ${brand.goldSoft}, ${brand.gold})`,
+                      boxShadow: `0 0 18px ${brand.gold}a6`,
+                    }}
+                  />
+                  <Typography sx={{ fontSize: 15, color: 'rgba(255,255,255,0.85)' }}>{point}</Typography>
+                </Stack>
+              ))}
+            </Stack>
           </Box>
-        </Grow>
+
+          {/* Visual */}
+          <Box sx={{ position: 'relative', width: '100%', minHeight: { xs: 380, md: 560 } }}>
+            {/* Main card */}
+            <Box
+              sx={{
+                ...cardBaseSx,
+                width: { xs: '100%', sm: '78%' },
+                height: { xs: 260, md: 430 },
+                right: 0,
+                top: { xs: 0, md: 60 },
+                position: { xs: 'relative', sm: 'absolute' },
+                zIndex: 1,
+              }}
+            >
+              <Image src="/assets/hero-1.png" alt="Digital solutions" fill sizes="(max-width: 900px) 100vw, 40vw" />
+            </Box>
+            {/* Top card */}
+            <Box
+              sx={{
+                ...cardBaseSx,
+                display: { xs: 'none', sm: 'block' },
+                width: '44%',
+                height: 200,
+                left: 0,
+                top: 0,
+                zIndex: 2,
+              }}
+            >
+              <Image src="/assets/hero-2.png" alt="Creative studio" fill sizes="20vw" />
+            </Box>
+            {/* Bottom card */}
+            <Box
+              sx={{
+                ...cardBaseSx,
+                display: { xs: 'none', sm: 'block' },
+                width: '46%',
+                height: 220,
+                left: 20,
+                bottom: 0,
+                zIndex: 2,
+              }}
+            >
+              <Image src="/assets/hero-3.png" alt="Technology" fill sizes="20vw" />
+            </Box>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

@@ -8,15 +8,23 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import Image from 'next/image';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
 import Toolbar from '@mui/material/Toolbar';
+import { usePathname } from 'next/navigation';
 
 import ColorModeIconDropdown from '@/components/navBar/ColorModeIconDropDown';
-// import Sitemark from './SitemarkIcon';
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -36,10 +44,14 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function NavBar() {
   const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
     <AppBar
@@ -55,21 +67,26 @@ export default function NavBar() {
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            {/* <Sitemark /> */}
+          <Box sx={{ display: 'flex', alignItems: 'center', px: 0 }}>
+            <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
+              <Image src="/assets/boostify-logo.png" alt="Boostify" width={64} height={22} style={{ height: 'auto', width: 64, objectFit: 'contain' }} priority />
+            </Box>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button variant="text" color="info" size="small" component={NextLink} href="/">
-                Home
-              </Button>
-              <Button variant="text" color="info" size="small" component={NextLink} href="/about">
-                About
-              </Button>
-              <Button variant="text" color="info" size="small" component={NextLink} href="/faq">
-                FAQ
-              </Button>
-              <Button variant="text" color="info" size="small" component={NextLink} href="/contact">
-                Contact
-              </Button>
+              {navItems.map((item) => (
+                <Button
+                  key={item.href}
+                  variant="text"
+                  size="small"
+                  component={NextLink}
+                  href={item.href}
+                  sx={{
+                    color: isActive(item.href) ? 'primary.main' : 'text.primary',
+                    fontWeight: isActive(item.href) ? 800 : 600,
+                  }}
+                >
+                  {item.label}
+                </Button>
+              ))}
             </Box>
           </Box>
           <Box
@@ -79,6 +96,15 @@ export default function NavBar() {
               alignItems: 'center',
             }}
           >
+            <Button
+              variant="outlined"
+              color="primary"
+              size="small"
+              component={NextLink}
+              href="/contact"
+            >
+              Get In Touch
+            </Button>
             <ColorModeIconDropdown />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
@@ -110,10 +136,30 @@ export default function NavBar() {
                   </IconButton>
                 </Box>
 
-                <MenuItem component={NextLink} href="/">Home</MenuItem>
-                <MenuItem component={NextLink} href="/about">About</MenuItem>
-                <MenuItem component={NextLink} href="/faq">FAQ</MenuItem>
-                <MenuItem component={NextLink} href="/contact">Contact</MenuItem>
+                {navItems.map((item) => (
+                  <MenuItem
+                    key={item.href}
+                    component={NextLink}
+                    href={item.href}
+                    onClick={toggleDrawer(false)}
+                    selected={isActive(item.href)}
+                  >
+                    {item.label}
+                  </MenuItem>
+                ))}
+                <Divider sx={{ my: 1 }} />
+                <MenuItem>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    component={NextLink}
+                    href="/contact"
+                    onClick={toggleDrawer(false)}
+                  >
+                    Get In Touch
+                  </Button>
+                </MenuItem>
               </Box>
             </Drawer>
           </Box>
