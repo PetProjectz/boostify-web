@@ -3,14 +3,15 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Image from 'next/image';
 
 import SectionHeading from '@/components/common/SectionHeading';
 
 const clients = [
-  { src: '/assets/goldlac-logo.jpg', alt: 'Goldlac' },
-  { src: '/assets/higrow-logo.png', alt: 'K Grow Lanka' },
+  { src: '/assets/goldlac-logo.jpg', alt: 'Goldlac', href: 'https://paintfactory.lk' },
+  { src: '/assets/higrow-logo.png', alt: 'K Grow Lanka', href: 'https://higrowlanka.lk' },
   { src: '/assets/samtes-logo.png', alt: 'Samtes' },
   { src: '/assets/slaughter-logo.jpg', alt: 'Slaughter' },
 ];
@@ -26,6 +27,9 @@ export default function ClientsSection() {
               <Paper
                 elevation={0}
                 variant="outlined"
+                {...(client.href
+                  ? { component: Link, href: client.href, target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 sx={{
                   minHeight: 138,
                   height: '100%',
@@ -35,6 +39,13 @@ export default function ClientsSection() {
                   justifyContent: 'center',
                   p: 2.25,
                   boxShadow: '0 18px 45px rgba(7, 18, 45, 0.08)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  ...(client.href && {
+                    '&:hover': {
+                      transform: 'translateY(-3px)',
+                      boxShadow: '0 22px 50px rgba(7, 18, 45, 0.14)',
+                    },
+                  }),
                 }}
               >
                 <Box sx={{ position: 'relative', width: '100%', height: 90 }}>
