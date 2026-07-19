@@ -69,7 +69,7 @@ export default function NavBar() {
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center', px: 0 }}>
             <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
-              <Image src="/assets/boostify-logo.png" alt="Boostify" width={64} height={22} style={{ height: 'auto', width: 64, objectFit: 'contain' }} priority />
+              <Image src="/assets/boostify-logo.webp" alt="Boostify" width={64} height={22} style={{ height: 'auto', width: 64, objectFit: 'contain' }} priority />
             </Box>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               {navItems.map((item) => (

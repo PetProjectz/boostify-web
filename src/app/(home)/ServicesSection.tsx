@@ -10,25 +10,25 @@ import { brand } from '@/brand';
 
 const services = [
   {
-    image: '/assets/web-development.png',
+    image: '/assets/web-development.webp',
     title: 'Web and Mobile Application Development',
     description:
       'Advanced web, mobile, and AI application development leveraging modern frameworks, machine learning, cloud technologies, and intelligent automation to create secure, scalable, and high-performance digital solutions.',
   },
   {
-    image: '/assets/blockchain.png',
+    image: '/assets/blockchain.webp',
     title: 'Blockchain & Digital Ledger Solutions',
     description:
       'Secure and scalable blockchain powered solutions for digital transactions, record management, transparency, and next-generation business operations.',
   },
   {
-    image: '/assets/social-media.png',
+    image: '/assets/social-media.webp',
     title: 'Performance Marketing & Social Commerce',
     description:
       'Turn clicks into customers and scale your revenue. We move past vanity metrics like "likes" to focus on what matters: leads and sales. We design data-driven ad campaigns and high-converting WhatsApp funnels that directly impact your bottom line.',
   },
   {
-    image: '/assets/digital-marketing.png',
+    image: '/assets/digital-marketing.webp',
     title: 'Advanced Search & Discoverability (SEO + GEO)',
     description:
       'Be found exactly when your customers are looking. We ensure your business dominates search results—whether someone is searching on Google, asking AI engines like ChatGPT, or looking for local services on Maps.',
