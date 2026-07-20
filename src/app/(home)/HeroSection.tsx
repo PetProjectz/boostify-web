@@ -15,7 +15,7 @@ import { brand } from '@/brand';
 const heroPoints = [
   'Premium digital strategy and execution',
   'Modern branding, media, and technology solutions',
-  'Built for startups, enterprises, and growing brands',
+  'Built for start-ups, enterprises, and exporters',
 ];
 
 const cardBaseSx = {
@@ -66,17 +66,17 @@ function HeroSection() {
                 mb: 1,
               }}
             >
-              Premium Digital Innovation
+              Nextgen Digital Innovation
             </Typography>
             <Typography
               variant="h1"
               sx={{ fontSize: 'clamp(42px, 7vw, 78px)', lineHeight: 0.98, letterSpacing: '-0.07em', mb: 2.5, maxWidth: 760 }}
             >
-              We Build Powerful Digital Brands For The Modern Future
+              We build brands that win online
             </Typography>
             <Typography sx={{ color: 'rgba(255,255,255,0.84)', fontSize: 19, maxWidth: 660, mb: 3.5 }}>
               Boostify combines technology, strategy, and creative excellence to help ambitious
-              businesses grow faster, stand out stronger, and lead confidently in the digital world.
+              businesses grow faster online.
             </Typography>
 
             <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 2 }}>
