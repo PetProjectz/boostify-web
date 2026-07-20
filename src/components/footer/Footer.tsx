@@ -16,6 +16,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Copyright from '@/components/footer/Copyright';
 import { brand } from '@/brand';
+import { socialLinks } from '@/socialLinks';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -31,9 +32,9 @@ const services = [
 ];
 
 const socials = [
-  { icon: <FacebookIcon fontSize="small" />, href: 'https://www.facebook.com/share/1HUMUKM9MX/?mibextid=wwXIfr', label: 'Facebook' },
-  { icon: <InstagramIcon fontSize="small" />, href: 'https://instagram.com/boostify.lk', label: 'Instagram' },
-  { icon: <LinkedInIcon fontSize="small" />, href: 'https://www.linkedin.com/company/boostifylk/', label: 'LinkedIn' },
+  { icon: <FacebookIcon fontSize="small" />, href: socialLinks.facebook, label: 'Facebook' },
+  { icon: <InstagramIcon fontSize="small" />, href: socialLinks.instagram, label: 'Instagram' },
+  { icon: <LinkedInIcon fontSize="small" />, href: socialLinks.linkedin, label: 'LinkedIn' },
 ];
 
 const headingSx = { color: '#fff', fontSize: 15, fontWeight: 900, mb: 1.25 } as const;
@@ -100,6 +101,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   size="small"
                   sx={{

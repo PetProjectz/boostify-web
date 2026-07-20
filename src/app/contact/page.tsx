@@ -17,12 +17,12 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import PageHero from '@/components/common/PageHero';
 import CtaSection from '@/components/common/CtaSection';
 import ContactForm from '@/app/contact/ContactForm';
 import { brand } from '@/brand';
+import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
   title: 'Contact Us - Boostify',
@@ -37,10 +37,9 @@ const contactItems = [
 ];
 
 const socials = [
-  { icon: <FacebookIcon fontSize="small" />, label: 'Facebook' },
-  { icon: <InstagramIcon fontSize="small" />, label: 'Instagram' },
-  { icon: <LinkedInIcon fontSize="small" />, label: 'LinkedIn' },
-  { icon: <YouTubeIcon fontSize="small" />, label: 'YouTube' },
+  { icon: <FacebookIcon fontSize="small" />, href: socialLinks.facebook, label: 'Facebook' },
+  { icon: <InstagramIcon fontSize="small" />, href: socialLinks.instagram, label: 'Instagram' },
+  { icon: <LinkedInIcon fontSize="small" />, href: socialLinks.linkedin, label: 'LinkedIn' },
 ];
 
 export default function Contact() {
@@ -132,6 +131,9 @@ export default function Contact() {
                     {socials.map((s) => (
                       <IconButton
                         key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={s.label}
                         size="small"
                         sx={{
