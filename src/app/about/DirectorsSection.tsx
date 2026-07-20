@@ -20,7 +20,7 @@ const directors = [
     degree: 'BSc. (Hons) Engineering, University of Moratuwa',
     linkedin: 'https://www.linkedin.com/in/akeshala/',
     description:
-      'With over 5 years of experience in the software industry across leading local and foreign companies, Akeshala brings technical precision and innovative thinking to every project. His expertise in systems architecture ensures our digital solutions are built on strong technological foundations.',
+      'With over 5 years of experience in the software industry across leading local and foreign companies, Akeshala brings technical expertise and innovative thinking to every project.',
   },
   {
     photo: '/assets/team/randula.jpg',
@@ -29,16 +29,16 @@ const directors = [
     degree: 'BSc. (Hons) Electronic and Telecommunication Engineering, CINEC',
     linkedin: 'https://www.linkedin.com/in/randula-arukgoda-922487215/',
     description:
-      "Randula's engineering background combined with strategic marketing insights drives our data-driven approach. His analytical mindset ensures every campaign is optimized for maximum performance and measurable ROI.",
+      "Randula's engineering background combined with strategic marketing insights drives our data-driven approach. With exposure working alongside leading enterprises, his analytical mindset ensures every campaign is optimized for maximum performance and measurable ROI.",
   },
   {
     photo: '/assets/team/hasila.jpg',
     name: 'Hasila Heshan',
     role: 'Co-Founder & Director',
-    degree: '5+ years experience with leading television companies in Sri Lanka',
+    degree: '5+ years experience with leading television and radio companies',
     linkedin: 'https://www.linkedin.com/in/hasila-heshan-pathirana/',
     description:
-      "With over five years of hands on experience in Sri Lanka's leading television companies, Hasila brings outstanding media production expertise. His creative vision and technical proficiency in broadcast media elevate our content creation and event coverage services.",
+      'With more than five years of industry experience, including work at leading television and radio companies, Hasila brings broad media production expertise. His work spans national-level marketing campaigns, weddings, music videos, digital marketing, and event videography.',
   },
 ];
 

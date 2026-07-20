@@ -8,9 +8,9 @@ import Typography from '@mui/material/Typography';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import CampaignRoundedIcon from '@mui/icons-material/CampaignRounded';
 import ShareRoundedIcon from '@mui/icons-material/ShareRounded';
-import HubRoundedIcon from '@mui/icons-material/HubRounded';
 import BrushRoundedIcon from '@mui/icons-material/BrushRounded';
 import MovieRoundedIcon from '@mui/icons-material/MovieRounded';
+import AutoModeRoundedIcon from '@mui/icons-material/AutoModeRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import { brand } from '@/brand';
@@ -35,10 +35,10 @@ const expertise = [
       "Creative content planning, audience engagement, and brand growth strategies across today's leading social platforms.",
   },
   {
-    icon: <HubRoundedIcon />,
-    title: 'Blockchain Solutions',
+    icon: <AutoModeRoundedIcon />,
+    title: 'Business Process Automation',
     description:
-      'Secure and scalable blockchain applications that improve transparency, trust, and operational efficiency.',
+      'Intelligent workflows that cut manual effort, reduce errors, and help your teams operate faster with greater consistency.',
   },
   {
     icon: <BrushRoundedIcon />,

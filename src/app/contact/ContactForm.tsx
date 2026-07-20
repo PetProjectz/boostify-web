@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 
 const services = [
   'Web and Mobile Development',
-  'Blockchain Solutions',
+  'Business Process Automation',
   'Digital Marketing',
   'Social Media Management',
   'Creative Media Production',

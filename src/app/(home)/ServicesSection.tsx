@@ -17,9 +17,9 @@ const services = [
   },
   {
     image: '/assets/services/blockchain.webp',
-    title: 'Blockchain & Digital Ledger Solutions',
+    title: 'Business Process Automation',
     description:
-      'Secure and scalable blockchain powered solutions for digital transactions, record management, transparency, and next-generation business operations.',
+      'Streamline operations with intelligent automation that reduces manual work, improves accuracy, and scales your business processes across teams and systems.',
   },
   {
     image: '/assets/services/social-media.webp',
