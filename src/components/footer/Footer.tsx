@@ -88,7 +88,7 @@ export default function Footer() {
 
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography sx={headingSx}>Contact Info</Typography>
-            <Typography sx={linkSx}>Colombo, Sri Lanka</Typography>
+            <Typography sx={linkSx}>Kurunegala, Sri Lanka</Typography>
             <Link href="mailto:info@boostify.lk" sx={linkSx}>
               info@boostify.lk
             </Link>

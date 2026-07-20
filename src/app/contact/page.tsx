@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
-import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
 };
 
 const contactItems = [
-  { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Colombo, Sri Lanka' },
+  { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Kurunegala, Sri Lanka' },
   { icon: <EmailRoundedIcon />, title: 'Email', value: 'info@boostify.lk', href: 'mailto:info@boostify.lk' },
-  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+940713598928' },
-  { icon: <AccessTimeRoundedIcon />, title: 'Business Hours', value: 'Monday - Friday, 9:00 AM - 6:00 PM' },
+  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+94713598928' },
+  { icon: <WhatsAppIcon />, title: 'WhatsApp', value: '+94 71 359 8928', href: 'https://wa.me/94713598928' },
 ];
 
 const socials = [
@@ -91,7 +91,12 @@ export default function Contact() {
                             {item.title}
                           </Typography>
                           {item.href ? (
-                            <Link href={item.href} sx={{ color: 'text.secondary', fontSize: 14 }}>
+                            <Link
+                              href={item.href}
+                              target={item.href.startsWith('http') ? '_blank' : undefined}
+                              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              sx={{ color: 'text.secondary', fontSize: 14 }}
+                            >
                               {item.value}
                             </Link>
                           ) : (
