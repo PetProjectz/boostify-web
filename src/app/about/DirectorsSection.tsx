@@ -3,8 +3,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
 
 import SectionHeading from '@/components/common/SectionHeading';
@@ -16,6 +18,7 @@ const directors = [
     name: 'Akeshala Marasinghe',
     role: 'Co-Founder & Director',
     degree: 'BSc. (Hons) Engineering, University of Moratuwa',
+    linkedin: 'https://www.linkedin.com/in/akeshala/',
     description:
       'With over 5 years of experience in the software industry across leading local and foreign companies, Akeshala brings technical precision and innovative thinking to every project. His expertise in systems architecture ensures our digital solutions are built on strong technological foundations.',
   },
@@ -24,6 +27,7 @@ const directors = [
     name: 'Randula Arukgoda',
     role: 'Co-Founder & Director',
     degree: 'BSc. (Hons) Electronic and Telecommunication Engineering, CINEC',
+    linkedin: 'https://www.linkedin.com/in/randula-arukgoda-922487215/',
     description:
       "Randula's engineering background combined with strategic marketing insights drives our data-driven approach. His analytical mindset ensures every campaign is optimized for maximum performance and measurable ROI.",
   },
@@ -32,6 +36,7 @@ const directors = [
     name: 'Hasila Heshan',
     role: 'Co-Founder & Director',
     degree: '5+ years experience with leading television companies in Sri Lanka',
+    linkedin: 'https://www.linkedin.com/in/hasila-heshan-pathirana/',
     description:
       "With over five years of hands on experience in Sri Lanka's leading television companies, Hasila brings outstanding media production expertise. His creative vision and technical proficiency in broadcast media elevate our content creation and event coverage services.",
   },
@@ -65,9 +70,25 @@ export default function DirectorsSection() {
                     <Image src={director.photo} alt={director.name} fill sizes="120px" style={{ objectFit: 'cover' }} />
                   </Box>
                   <Box>
-                    <Typography variant="h3" sx={{ fontSize: 18, mb: 0.5, color: 'text.primary' }}>
-                      {director.name}
-                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 0.5 }}>
+                      <Typography variant="h3" sx={{ fontSize: 18, color: 'text.primary' }}>
+                        {director.name}
+                      </Typography>
+                      <IconButton
+                        href={director.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${director.name} on LinkedIn`}
+                        size="small"
+                        sx={{
+                          color: brand.goldDark,
+                          p: 0.5,
+                          '&:hover': { color: brand.gold, backgroundColor: 'transparent' },
+                        }}
+                      >
+                        <LinkedInIcon fontSize="small" />
+                      </IconButton>
+                    </Box>
                     <Typography sx={{ color: brand.goldDark, fontSize: 13, fontWeight: 700, mb: 1.5 }}>
                       {director.role}
                     </Typography>

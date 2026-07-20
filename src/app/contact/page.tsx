@@ -13,16 +13,16 @@ import Typography from '@mui/material/Typography';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
-import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import PageHero from '@/components/common/PageHero';
 import CtaSection from '@/components/common/CtaSection';
 import ContactForm from '@/app/contact/ContactForm';
 import { brand } from '@/brand';
+import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
   title: 'Contact Us - Boostify',
@@ -30,17 +30,16 @@ export const metadata: Metadata = {
 };
 
 const contactItems = [
-  { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Colombo, Sri Lanka' },
+  { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Kurunegala, Sri Lanka' },
   { icon: <EmailRoundedIcon />, title: 'Email', value: 'info@boostify.lk', href: 'mailto:info@boostify.lk' },
-  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+940713598928' },
-  { icon: <AccessTimeRoundedIcon />, title: 'Business Hours', value: 'Monday - Friday, 9:00 AM - 6:00 PM' },
+  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+94713598928' },
+  { icon: <WhatsAppIcon />, title: 'WhatsApp', value: '+94 71 359 8928', href: 'https://wa.me/94713598928' },
 ];
 
 const socials = [
-  { icon: <FacebookIcon fontSize="small" />, label: 'Facebook' },
-  { icon: <InstagramIcon fontSize="small" />, label: 'Instagram' },
-  { icon: <LinkedInIcon fontSize="small" />, label: 'LinkedIn' },
-  { icon: <YouTubeIcon fontSize="small" />, label: 'YouTube' },
+  { icon: <FacebookIcon fontSize="small" />, href: socialLinks.facebook, label: 'Facebook' },
+  { icon: <InstagramIcon fontSize="small" />, href: socialLinks.instagram, label: 'Instagram' },
+  { icon: <LinkedInIcon fontSize="small" />, href: socialLinks.linkedin, label: 'LinkedIn' },
 ];
 
 export default function Contact() {
@@ -92,7 +91,12 @@ export default function Contact() {
                             {item.title}
                           </Typography>
                           {item.href ? (
-                            <Link href={item.href} sx={{ color: 'text.secondary', fontSize: 14 }}>
+                            <Link
+                              href={item.href}
+                              target={item.href.startsWith('http') ? '_blank' : undefined}
+                              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              sx={{ color: 'text.secondary', fontSize: 14 }}
+                            >
                               {item.value}
                             </Link>
                           ) : (
@@ -132,6 +136,9 @@ export default function Contact() {
                     {socials.map((s) => (
                       <IconButton
                         key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={s.label}
                         size="small"
                         sx={{
