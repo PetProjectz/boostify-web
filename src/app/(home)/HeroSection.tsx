@@ -49,7 +49,7 @@ function HeroSection() {
             gap: { xs: 5, md: 8 },
             alignItems: 'center',
             minHeight: { md: 720 },
-            pt: { xs: 16, md: 18 },
+            pt: { xs: 6, md: 8 },
             pb: { xs: 8, md: 10 },
           }}
         >
