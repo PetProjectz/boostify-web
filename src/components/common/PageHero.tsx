@@ -22,7 +22,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         position: 'relative',
         overflow: 'hidden',
         color: '#fff',
-        pt: { xs: 16, sm: 20 },
+        pt: { xs: 6, sm: 8 },
         pb: { xs: 6, sm: 8 },
         borderBottom: `5px solid ${brand.gold}`,
         boxShadow: `0 8px 24px ${brand.gold}38`,
