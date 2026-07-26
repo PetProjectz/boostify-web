@@ -28,8 +28,24 @@ declare module "@mui/material/styles" {
     }
 }
 
+const primary = {
+    main: brand.gold,
+    light: brand.gold2,
+    dark: brand.goldDark,
+    contrastText: brand.onGold,
+};
+
+const secondary = {
+    main: "#9e9e9e",
+    dark: "#616161",
+    light: "#e0e0e0",
+};
+
 const theme = createTheme({
-    colorSchemes: { light: true, dark: true },
+    colorSchemes: {
+        light: { palette: { primary, secondary } },
+        dark: { palette: { primary, secondary } },
+    },
     cssVariables: {
         colorSchemeSelector: "class",
     },
@@ -66,19 +82,6 @@ const theme = createTheme({
                     fontWeight: 900,
                 },
             },
-        },
-    },
-    palette: {
-        primary: {
-            main: brand.gold,
-            light: brand.gold2,
-            dark: brand.goldDark,
-            contrastText: brand.onGold,
-        },
-        secondary: {
-            main: "#9e9e9e",
-            dark: "#616161",
-            light: "#e0e0e0",
         },
     },
 });
