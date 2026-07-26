@@ -19,7 +19,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import PageHero from '@/components/common/PageHero';
-import CtaSection from '@/components/common/CtaSection';
 import ContactForm from '@/app/contact/ContactForm';
 import { brand } from '@/brand';
 import { socialLinks } from '@/socialLinks';
