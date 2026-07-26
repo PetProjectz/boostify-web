@@ -25,8 +25,16 @@ import { brand } from '@/brand';
 import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Boostify',
+  title: 'Contact Us',
   description: 'Ready to boost your digital presence? Get in touch with us today.',
+  openGraph: {
+    title: 'Contact Us | Boostify',
+    description: 'Ready to boost your digital presence? Get in touch with us today.',
+    url: 'https://boostify.lk/contact',
+  },
+  alternates: {
+    canonical: 'https://boostify.lk/contact',
+  },
 };
 
 const contactItems = [
@@ -43,8 +51,38 @@ const socials = [
 ];
 
 export default function Contact() {
+  // Structured data for SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Boostify',
+      url: 'https://boostify.lk',
+      logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+94713598928',
+        contactType: 'Customer Service',
+        email: 'info@boostify.lk',
+        areaServed: 'LK',
+        availableLanguage: ['en'],
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Kurunegala',
+        addressCountry: 'LK',
+      },
+      sameAs: [socialLinks.facebook, socialLinks.instagram, socialLinks.linkedin],
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <PageHero
         tag="Contact Us"
         title="Let's Work Together"
