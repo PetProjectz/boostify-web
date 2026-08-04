@@ -23,6 +23,7 @@ import { brand } from '@/brand';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
+  { label: 'News', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ];
 
