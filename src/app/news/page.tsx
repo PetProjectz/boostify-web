@@ -24,7 +24,7 @@ export default function News() {
       <PageHero
         tag="News"
         title="Latest News"
-        subtitle="Updates, insights, and stories from the Boostify team."
+        subtitle="Updates, insights, and stories from the industry."
       />
       <NewsSection />
       <CtaSection />

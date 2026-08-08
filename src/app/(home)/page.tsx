@@ -10,13 +10,13 @@ import CtaSection from '@/components/common/CtaSection';
 import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Digital & AI Transformation Partner in Sri Lanka',
   description:
-    'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster and lead confidently in the digital world.',
+    "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",
   openGraph: {
-    title: 'Boostify - Digital Marketing Agency',
+    title: 'Boostify - Digital & AI Transformation Partner in Sri Lanka',
     description:
-      'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster and lead confidently in the digital world.',
+      "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",
     url: 'https://boostify.lk',
   },
   alternates: {
@@ -32,7 +32,14 @@ function Home() {
     name: 'Boostify',
     url: 'https://boostify.lk',
     logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
-    description: 'Digital marketing agency combining technology, strategy, and creative excellence for ambitious businesses.',
+    description:
+      "Sri Lanka's digital and AI transformation partner, combining technology, strategy, and creative excellence for ambitious businesses.",
+    areaServed: 'LK',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Kurunegala',
+      addressCountry: 'LK',
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+94713598928',

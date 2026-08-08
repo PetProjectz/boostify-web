@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { brand } from '@/brand';
 
 const heroPoints = [
+  "Sri Lanka's trusted partner for digital & AI transformation",
   'Premium digital strategy and execution',
   'Modern branding, media, and technology solutions',
   'Built for start-ups, enterprises, and exporters',
@@ -66,7 +67,7 @@ function HeroSection() {
                 mb: 1,
               }}
             >
-              Nextgen Digital Innovation
+              Turning Clicks into Customers
             </Typography>
             <Typography
               variant="h1"
@@ -75,8 +76,9 @@ function HeroSection() {
               We build brands that win online
             </Typography>
             <Typography sx={{ color: 'rgba(255,255,255,0.84)', fontSize: 19, maxWidth: 660, mb: 3.5 }}>
-              Boostify combines technology, strategy, and creative excellence to help ambitious
-              businesses grow faster online.
+              Boostify partners with Sri Lankan businesses to transform digitally and embrace AI —
+              combining technology, strategy, and creative excellence to help you grow faster and
+              lead confidently online.
             </Typography>
 
             <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 2 }}>
