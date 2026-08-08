@@ -1,10 +1,27 @@
+'use client';
+
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
 
 import { brand } from '@/brand';
+import { easeOutExpo } from '@/app/(home)/heroShared';
+
+const MotionContainer = motion.create(Container);
+const MotionTypography = motion.create(Typography);
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 26 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutExpo } },
+};
 
 interface PageHeroProps {
   tag: string;
@@ -29,9 +46,14 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         background: `radial-gradient(circle at 15% 35%, ${brand.gold}2e, transparent 26%), radial-gradient(circle at 86% 28%, ${brand.gold}29, transparent 32%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navySoft} 100%)`,
       }}
     >
-      <Container sx={{ position: 'relative', textAlign: 'center' }}>
-        <Typography
-          component="p"
+      <MotionContainer
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        sx={{ position: 'relative', textAlign: 'center' }}
+      >
+        <MotionTypography
+          variants={itemVariants}
           sx={{
             color: brand.gold,
             fontWeight: 800,
@@ -42,17 +64,18 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
           }}
         >
           {tag}
-        </Typography>
-        <Typography
+        </MotionTypography>
+        <MotionTypography
           variant="h1"
+          variants={itemVariants}
           sx={{ fontSize: 'clamp(46px, 7vw, 72px)', letterSpacing: '-0.06em', mb: 2 }}
         >
           {title}
-        </Typography>
-        <Typography sx={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>
+        </MotionTypography>
+        <MotionTypography variants={itemVariants} sx={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>
           {subtitle}
-        </Typography>
-      </Container>
+        </MotionTypography>
+      </MotionContainer>
     </Box>
   );
 }

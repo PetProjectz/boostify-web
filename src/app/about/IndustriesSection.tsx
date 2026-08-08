@@ -14,6 +14,7 @@ import HotelRoundedIcon from '@mui/icons-material/HotelRounded';
 import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import { brand } from '@/brand';
 
 const industries = [
@@ -29,33 +30,37 @@ export default function IndustriesSection() {
   return (
     <Box sx={{ py: { xs: 6, sm: 7 }, bgcolor: 'background.default' }}>
       <Container>
-        <SectionHeading tag="Our Clients" title="Industries We Serve" align="center" />
+        <ScrollReveal>
+          <SectionHeading tag="Our Clients" title="Industries We Serve" align="center" />
+        </ScrollReveal>
         <Grid container spacing={2.25} sx={{ mt: 2 }}>
-          {industries.map((industry) => (
+          {industries.map((industry, index) => (
             <Grid size={{ xs: 6, sm: 4, md: 2 }} key={industry.title}>
-              <Paper
-                elevation={0}
-                variant="outlined"
-                sx={{
-                  height: '100%',
-                  minHeight: 170,
-                  borderRadius: '12px',
-                  p: 2,
-                  textAlign: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  boxShadow: '0 14px 32px rgba(5, 18, 45, 0.08)',
-                }}
-              >
-                <Box sx={{ color: brand.gold2, mb: 1.25, '& svg': { fontSize: 44 } }}>{industry.icon}</Box>
-                <Typography variant="h3" sx={{ fontSize: 14, mb: 1, color: 'text.primary' }}>
-                  {industry.title}
-                </Typography>
-                <Typography sx={{ color: 'text.secondary', fontSize: 12, lineHeight: 1.35 }}>
-                  {industry.description}
-                </Typography>
-              </Paper>
+              <ScrollReveal delay={Math.min(index * 0.06, 0.3)} sx={{ height: '100%' }}>
+                <Paper
+                  elevation={0}
+                  variant="outlined"
+                  sx={{
+                    height: '100%',
+                    minHeight: 170,
+                    borderRadius: '12px',
+                    p: 2,
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    boxShadow: '0 14px 32px rgba(5, 18, 45, 0.08)',
+                  }}
+                >
+                  <Box sx={{ color: brand.gold2, mb: 1.25, '& svg': { fontSize: 44 } }}>{industry.icon}</Box>
+                  <Typography variant="h3" sx={{ fontSize: 14, mb: 1, color: 'text.primary' }}>
+                    {industry.title}
+                  </Typography>
+                  <Typography sx={{ color: 'text.secondary', fontSize: 12, lineHeight: 1.35 }}>
+                    {industry.description}
+                  </Typography>
+                </Paper>
+              </ScrollReveal>
             </Grid>
           ))}
         </Grid>

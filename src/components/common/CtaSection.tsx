@@ -7,6 +7,7 @@ import NextLink from 'next/link';
 import Typography from '@mui/material/Typography';
 
 import { brand } from '@/brand';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 /**
  * "Ready to Boost Your Business?" call-to-action band. Always rendered in the
@@ -16,7 +17,7 @@ export default function CtaSection() {
   return (
     <Box sx={{ bgcolor: 'background.default', pb: 2 }}>
       <Container sx={{ px: { xs: 0, sm: 3 } }}>
-        <Box
+        <ScrollReveal
           sx={{
             borderRadius: 3,
             overflow: 'hidden',
@@ -72,7 +73,7 @@ export default function CtaSection() {
           >
             Get In Touch&nbsp;›
           </Button>
-        </Box>
+        </ScrollReveal>
       </Container>
     </Box>
   );

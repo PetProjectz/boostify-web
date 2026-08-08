@@ -13,6 +13,7 @@ import MovieRoundedIcon from '@mui/icons-material/MovieRounded';
 import AutoModeRoundedIcon from '@mui/icons-material/AutoModeRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import { brand } from '@/brand';
 
 const expertise = [
@@ -64,11 +65,14 @@ export default function ExpertiseSection() {
       }}
     >
       <Container>
-        <SectionHeading tag="What We Excel At" title="Our Expertise" align="center" light />
+        <ScrollReveal>
+          <SectionHeading tag="What We Excel At" title="Our Expertise" align="center" light />
+        </ScrollReveal>
         <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
-          {expertise.map((item) => (
+          {expertise.map((item, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.title}>
-              <Box
+              <ScrollReveal
+                delay={Math.min(index * 0.08, 0.3)}
                 sx={{
                   height: '100%',
                   display: 'flex',
@@ -105,7 +109,7 @@ export default function ExpertiseSection() {
                     {item.description}
                   </Typography>
                 </Box>
-              </Box>
+              </ScrollReveal>
             </Grid>
           ))}
         </Grid>

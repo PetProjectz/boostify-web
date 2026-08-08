@@ -14,6 +14,7 @@ import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import { brand } from '@/brand';
 
 const reasons = [
@@ -59,44 +60,48 @@ export default function WhyChooseUsSection() {
   return (
     <Box sx={{ py: { xs: 7, sm: 8 }, bgcolor: 'background.default' }}>
       <Container>
-        <SectionHeading tag="The Boostify Advantage" title="Why Choose Us?" align="center" />
+        <ScrollReveal>
+          <SectionHeading tag="The Boostify Advantage" title="Why Choose Us?" align="center" />
+        </ScrollReveal>
         <Grid container spacing={2.5} sx={{ mt: 2 }}>
-          {reasons.map((reason) => (
+          {reasons.map((reason, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={reason.title}>
-              <Paper
-                elevation={0}
-                variant="outlined"
-                sx={{
-                  height: '100%',
-                  borderRadius: '18px',
-                  p: 3.5,
-                  boxShadow: '0 18px 45px rgba(7, 18, 45, 0.10)',
-                  transition: 'transform 0.25s ease',
-                  '&:hover': { transform: 'translateY(-4px)' },
-                }}
-              >
-                <Box
+              <ScrollReveal delay={Math.min(index * 0.08, 0.3)} sx={{ height: '100%' }}>
+                <Paper
+                  elevation={0}
+                  variant="outlined"
                   sx={{
-                    width: 62,
-                    height: 62,
+                    height: '100%',
                     borderRadius: '18px',
-                    display: 'grid',
-                    placeItems: 'center',
-                    mb: 2.25,
-                    background: 'linear-gradient(180deg, #fff6df, #fff1cb)',
-                    border: `1px solid ${brand.gold}59`,
-                    boxShadow: `0 10px 20px ${brand.gold}1f`,
-                    color: brand.goldDark,
-                    '& svg': { fontSize: 30 },
+                    p: 3.5,
+                    boxShadow: '0 18px 45px rgba(7, 18, 45, 0.10)',
+                    transition: 'transform 0.25s ease',
+                    '&:hover': { transform: 'translateY(-4px)' },
                   }}
                 >
-                  {reason.icon}
-                </Box>
-                <Typography variant="h3" sx={{ fontSize: 21, mb: 1.25, color: 'text.primary' }}>
-                  {reason.title}
-                </Typography>
-                <Typography sx={{ color: 'text.secondary', fontSize: 14 }}>{reason.description}</Typography>
-              </Paper>
+                  <Box
+                    sx={{
+                      width: 62,
+                      height: 62,
+                      borderRadius: '18px',
+                      display: 'grid',
+                      placeItems: 'center',
+                      mb: 2.25,
+                      background: 'linear-gradient(180deg, #fff6df, #fff1cb)',
+                      border: `1px solid ${brand.gold}59`,
+                      boxShadow: `0 10px 20px ${brand.gold}1f`,
+                      color: brand.goldDark,
+                      '& svg': { fontSize: 30 },
+                    }}
+                  >
+                    {reason.icon}
+                  </Box>
+                  <Typography variant="h3" sx={{ fontSize: 21, mb: 1.25, color: 'text.primary' }}>
+                    {reason.title}
+                  </Typography>
+                  <Typography sx={{ color: 'text.secondary', fontSize: 14 }}>{reason.description}</Typography>
+                </Paper>
+              </ScrollReveal>
             </Grid>
           ))}
         </Grid>
