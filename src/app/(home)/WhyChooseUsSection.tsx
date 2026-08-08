@@ -39,7 +39,7 @@ const reasons = [
     icon: <WorkspacePremiumRoundedIcon />,
     title: 'Proven Track Record',
     description:
-      'With 50+ successful projects, we have helped businesses across industries achieve their digital goals.',
+      'With 25+ successful projects, we have helped businesses across industries achieve their digital goals.',
   },
   {
     icon: <AutoAwesomeRoundedIcon />,
