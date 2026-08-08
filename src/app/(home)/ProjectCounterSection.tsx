@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
 
-const TARGET = 50;
+const TARGET = 25;
 const DURATION = 3000;
 
 export default function ProjectCounterSection() {
