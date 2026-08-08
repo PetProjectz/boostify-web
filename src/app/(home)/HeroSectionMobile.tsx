@@ -6,10 +6,10 @@ import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
-import { motion, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { brand } from '@/brand';
-import HeroImageCard from '@/components/common/HeroImageCard';
+import HeroMobileGallery from './HeroMobileGallery';
 import { cardBaseSx, easeOutExpo, heroPoints } from './heroShared';
 
 const MotionTypography = motion.create(Typography);
@@ -17,10 +17,14 @@ const MotionStack = motion.create(Stack);
 
 const mobileDelays = [0.1, 0.22, 0.34, 0.46, 0.58, 0.7];
 
+const heroImages = [
+  { src: '/assets/hero/hero-1.webp', alt: 'Digital solutions' },
+  { src: '/assets/hero/hero-2.webp', alt: 'Creative studio' },
+  { src: '/assets/hero/hero-3.webp', alt: 'Technology' },
+];
+
 export default function HeroSectionMobile() {
   const theme = useTheme();
-  const springX = useMotionValue(0);
-  const springY = useMotionValue(0);
 
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' }, pt: 6, pb: 8 }}>
@@ -49,13 +53,9 @@ export default function HeroSectionMobile() {
         We build brands that win online
       </MotionTypography>
 
-      <HeroImageCard
-        src="/assets/hero/hero-1.webp"
-        alt="Digital solutions"
+      <HeroMobileGallery
+        images={heroImages}
         delay={mobileDelays[2]}
-        parallaxDepth={0}
-        springX={springX}
-        springY={springY}
         sizes="100vw"
         sx={[cardBaseSx, { position: 'relative', width: '100%', height: 260, mb: 3 }]}
       />
