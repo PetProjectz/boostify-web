@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { brand } from '@/brand';
 import { fetchNewsFromSheet } from '@/lib/newsSheet';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import NewsCardImage from '@/app/news/NewsCardImage';
 
 export default async function NewsSection() {
   let newsItems: Awaited<ReturnType<typeof fetchNewsFromSheet>> = [];
@@ -49,17 +50,7 @@ export default async function NewsSection() {
                     },
                   }}
                 >
-                  {item.image && (
-                    <Box
-                      sx={{
-                        height: 190,
-                        backgroundImage: `url('${item.image}')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        bgcolor: brand.navy,
-                      }}
-                    />
-                  )}
+                  <NewsCardImage src={item.image} alt={item.title} />
                   <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                     {item.date && (
                       <Typography
