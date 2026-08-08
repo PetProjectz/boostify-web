@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 
 import { brand } from '@/brand';
 import { fetchNewsFromSheet } from '@/lib/newsSheet';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default async function NewsSection() {
   let newsItems: Awaited<ReturnType<typeof fetchNewsFromSheet>> = [];
@@ -26,10 +27,11 @@ export default async function NewsSection() {
           </Typography>
         ) : (
           <Grid container spacing={4}>
-            {newsItems.map((item) => (
+            {newsItems.map((item, index) => (
               <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.title}>
-                <Box
+                <ScrollReveal
                   component="article"
+                  delay={Math.min(index * 0.08, 0.3)}
                   sx={{
                     height: '100%',
                     display: 'flex',
@@ -91,7 +93,7 @@ export default async function NewsSection() {
                       </Typography>
                     ))}
                   </Box>
-                </Box>
+                </ScrollReveal>
               </Grid>
             ))}
           </Grid>

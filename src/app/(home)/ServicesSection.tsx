@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import { brand } from '@/brand';
 
 const services = [
@@ -46,11 +47,14 @@ export default function ServicesSection() {
       }}
     >
       <Container>
-        <SectionHeading tag="What We Do" title="Our Services" align="center" light />
+        <ScrollReveal>
+          <SectionHeading tag="What We Do" title="Our Services" align="center" light />
+        </ScrollReveal>
         <Grid container spacing={3} sx={{ mt: 2 }}>
-          {services.map((service) => (
+          {services.map((service, index) => (
             <Grid size={{ xs: 12, md: 6 }} key={service.title}>
-              <Box
+              <ScrollReveal
+                delay={Math.min(index * 0.1, 0.3)}
                 sx={{
                   position: 'relative',
                   minHeight: 300,
@@ -79,7 +83,7 @@ export default function ServicesSection() {
                   </Typography>
                   <Typography sx={{ color: 'rgba(255,255,255,0.82)' }}>{service.description}</Typography>
                 </Box>
-              </Box>
+              </ScrollReveal>
             </Grid>
           ))}
         </Grid>

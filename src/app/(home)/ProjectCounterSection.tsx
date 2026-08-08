@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 const TARGET = 25;
 const DURATION = 3000;
@@ -47,34 +48,36 @@ export default function ProjectCounterSection() {
   return (
     <Box sx={{ py: { xs: 6, sm: 7 }, bgcolor: 'background.default' }}>
       <Container>
-        <Paper
-          ref={ref}
-          elevation={0}
-          variant="outlined"
-          sx={{
-            textAlign: 'center',
-            borderRadius: '22px',
-            px: { xs: 3, sm: 4 },
-            py: { xs: 5, sm: 6 },
-            boxShadow: '0 18px 45px rgba(7, 18, 45, 0.12)',
-          }}
-        >
-          <SectionHeading tag="Our Achievements" title="Completed Projects" align="center" />
-          <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: 0.5, mb: 1.5 }}>
-            <Typography
-              component="span"
-              sx={{ fontSize: 'clamp(64px, 9vw, 110px)', fontWeight: 900, lineHeight: 1, color: 'primary.main', letterSpacing: '-0.06em' }}
-            >
-              {count}
+        <ScrollReveal>
+          <Paper
+            ref={ref}
+            elevation={0}
+            variant="outlined"
+            sx={{
+              textAlign: 'center',
+              borderRadius: '22px',
+              px: { xs: 3, sm: 4 },
+              py: { xs: 5, sm: 6 },
+              boxShadow: '0 18px 45px rgba(7, 18, 45, 0.12)',
+            }}
+          >
+            <SectionHeading tag="Our Achievements" title="Completed Projects" align="center" />
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: 0.5, mb: 1.5 }}>
+              <Typography
+                component="span"
+                sx={{ fontSize: 'clamp(64px, 9vw, 110px)', fontWeight: 900, lineHeight: 1, color: 'primary.main', letterSpacing: '-0.06em' }}
+              >
+                {count}
+              </Typography>
+              <Typography component="span" sx={{ fontSize: 42, fontWeight: 900, lineHeight: 1, color: 'text.primary', mt: 1.5 }}>
+                +
+              </Typography>
+            </Box>
+            <Typography sx={{ color: 'text.secondary', maxWidth: 700, mx: 'auto' }}>
+              We have successfully delivered high-impact digital solutions for brands across multiple industries.
             </Typography>
-            <Typography component="span" sx={{ fontSize: 42, fontWeight: 900, lineHeight: 1, color: 'text.primary', mt: 1.5 }}>
-              +
-            </Typography>
-          </Box>
-          <Typography sx={{ color: 'text.secondary', maxWidth: 700, mx: 'auto' }}>
-            We have successfully delivered high-impact digital solutions for brands across multiple industries.
-          </Typography>
-        </Paper>
+          </Paper>
+        </ScrollReveal>
       </Container>
     </Box>
   );
