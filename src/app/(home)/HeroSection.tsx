@@ -67,7 +67,7 @@ function HeroSection() {
                 mb: 1,
               }}
             >
-              Sri Lanka&apos;s Digital &amp; AI Transformation Partner
+              Turning Clicks into Customers
             </Typography>
             <Typography
               variant="h1"
