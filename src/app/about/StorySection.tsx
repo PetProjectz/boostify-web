@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { pageHeroSettleDelay } from '@/app/(home)/heroShared';
 
 const paragraphs = [
   'Boostify was born from a vision to revolutionize how businesses connect with their audiences in the digital age. Founded by a team of passionate innovators with diverse expertise in technology, media, and marketing, we have built a company that thrives on creativity, technical excellence, and delivering measurable results.',
@@ -25,7 +26,7 @@ export default function StorySection() {
             alignItems: 'center',
           }}
         >
-          <ScrollReveal>
+          <ScrollReveal delay={pageHeroSettleDelay}>
             <SectionHeading tag="Our Story" title="Our Background" />
             {paragraphs.map((text, i) => (
               <Typography key={i} sx={{ color: 'text.secondary', fontSize: 15, lineHeight: 1.7, mb: 2.5 }}>
@@ -34,7 +35,7 @@ export default function StorySection() {
             ))}
           </ScrollReveal>
           <ScrollReveal
-            delay={0.15}
+            delay={pageHeroSettleDelay + 0.15}
             aria-label="Boostify office branding"
             sx={{
               position: 'relative',

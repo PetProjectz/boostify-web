@@ -11,6 +11,12 @@ import { brand } from '@/brand';
 
 const services = [
   {
+    image: '/assets/services/social-media.webp',
+    title: 'Performance Marketing & Social Commerce',
+    description:
+      'Turn clicks into customers and scale your revenue. We move past vanity metrics like "likes" to focus on what matters: leads and sales. We design data-driven ad campaigns and high-converting WhatsApp funnels that directly impact your bottom line.',
+  },
+  {
     image: '/assets/services/web-development.webp',
     title: 'Web and Mobile Application Development',
     description:
@@ -21,12 +27,6 @@ const services = [
     title: 'Business Process Automation',
     description:
       'Streamline operations with intelligent automation that reduces manual work, improves accuracy, and scales your business processes across teams and systems.',
-  },
-  {
-    image: '/assets/services/social-media.webp',
-    title: 'Performance Marketing & Social Commerce',
-    description:
-      'Turn clicks into customers and scale your revenue. We move past vanity metrics like "likes" to focus on what matters: leads and sales. We design data-driven ad campaigns and high-converting WhatsApp funnels that directly impact your bottom line.',
   },
   {
     image: '/assets/services/digital-marketing.webp',

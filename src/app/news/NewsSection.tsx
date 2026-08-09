@@ -9,6 +9,7 @@ import { brand } from '@/brand';
 import { fetchNewsFromSheet } from '@/lib/newsSheet';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import NewsCardImage from '@/app/news/NewsCardImage';
+import { pageHeroSettleDelay } from '@/app/(home)/heroShared';
 
 export default async function NewsSection() {
   let newsItems: Awaited<ReturnType<typeof fetchNewsFromSheet>> = [];
@@ -32,7 +33,7 @@ export default async function NewsSection() {
               <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.title}>
                 <ScrollReveal
                   component="article"
-                  delay={Math.min(index * 0.08, 0.3)}
+                  delay={pageHeroSettleDelay + Math.min(index * 0.08, 0.3)}
                   sx={{
                     height: '100%',
                     display: 'flex',

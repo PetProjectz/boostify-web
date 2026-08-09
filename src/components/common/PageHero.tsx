@@ -13,15 +13,7 @@ import { easeOutExpo } from '@/app/(home)/heroShared';
 const MotionContainer = motion.create(Container);
 const MotionTypography = motion.create(Typography);
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 26 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutExpo } },
-};
+const heroDelays = [0.1, 0.22, 0.34];
 
 interface PageHeroProps {
   tag: string;
@@ -46,14 +38,11 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         background: `radial-gradient(circle at 15% 35%, ${brand.gold}2e, transparent 26%), radial-gradient(circle at 86% 28%, ${brand.gold}29, transparent 32%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navySoft} 100%)`,
       }}
     >
-      <MotionContainer
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        sx={{ position: 'relative', textAlign: 'center' }}
-      >
+      <MotionContainer sx={{ position: 'relative', textAlign: 'center' }}>
         <MotionTypography
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: heroDelays[0], ease: easeOutExpo }}
           sx={{
             color: brand.gold,
             fontWeight: 800,
@@ -67,12 +56,19 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         </MotionTypography>
         <MotionTypography
           variant="h1"
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: heroDelays[1], ease: easeOutExpo }}
           sx={{ fontSize: 'clamp(46px, 7vw, 72px)', letterSpacing: '-0.06em', mb: 2 }}
         >
           {title}
         </MotionTypography>
-        <MotionTypography variants={itemVariants} sx={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>
+        <MotionTypography
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: heroDelays[2], ease: easeOutExpo }}
+          sx={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}
+        >
           {subtitle}
         </MotionTypography>
       </MotionContainer>

@@ -28,7 +28,7 @@ export default function ScrollReveal({ delay = 0, y = 32, children, ...rest }: S
     <MotionBox
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1, margin: '0px 0px 100px 0px' }}
       transition={{ duration: 0.7, delay, ease: easeOutExpo }}
       {...(rest as React.ComponentProps<typeof MotionBox>)}
     >
