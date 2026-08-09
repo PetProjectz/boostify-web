@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 
 import { easeOutExpo } from '@/app/(home)/heroShared';
 
-const MotionContainer = motion.create(Container);
 const MotionTypography = motion.create(Typography);
 
 const heroDelays = [0.1, 0.22, 0.34];
@@ -39,7 +38,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
           'radial-gradient(circle at 15% 35%, color-mix(in srgb, var(--mui-palette-primary-main) 18%, transparent), transparent 26%), radial-gradient(circle at 86% 28%, color-mix(in srgb, var(--mui-palette-primary-main) 16%, transparent), transparent 32%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-soft) 100%)',
       }}
     >
-      <MotionContainer sx={{ position: 'relative', textAlign: 'center' }}>
+      <Container sx={{ position: 'relative', textAlign: 'center' }}>
         <MotionTypography
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +71,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         >
           {subtitle}
         </MotionTypography>
-      </MotionContainer>
+      </Container>
     </Box>
   );
 }

@@ -60,7 +60,7 @@ export default function Footer() {
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
               <ThemedImage
-                lightSrc="/assets/brand/boostify-logo-light.webp"
+                lightSrc="/assets/brand/boostify-logo-light.png"
                 darkSrc="/assets/brand/boostify-logo.webp"
                 alt="Boostify"
                 width={80}

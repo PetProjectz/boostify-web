@@ -60,7 +60,7 @@ export default function NavBar() {
         <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, position: 'relative' }}>
           <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', zIndex: 1 }}>
             <ThemedImage
-              lightSrc="/assets/brand/boostify-logo-light.webp"
+              lightSrc="/assets/brand/boostify-logo-light.png"
               darkSrc="/assets/brand/boostify-logo.webp"
               alt="Boostify"
               width={80}
