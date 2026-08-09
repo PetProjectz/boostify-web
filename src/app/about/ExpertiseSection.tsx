@@ -14,7 +14,6 @@ import AutoModeRoundedIcon from '@mui/icons-material/AutoModeRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
 
 const expertise = [
   {
@@ -59,14 +58,15 @@ export default function ExpertiseSection() {
   return (
     <Box
       sx={{
-        color: '#fff',
+        color: 'text.primary',
         py: { xs: 6, sm: 7 },
-        background: `radial-gradient(circle at 50% -20%, ${brand.gold}21, transparent 33%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navy3} 100%)`,
+        background:
+          'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
       }}
     >
       <Container>
         <ScrollReveal>
-          <SectionHeading tag="What We Excel At" title="Our Expertise" align="center" light />
+          <SectionHeading tag="What We Excel At" title="Our Expertise" align="center" />
         </ScrollReveal>
         <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
           {expertise.map((item, index) => (
@@ -80,10 +80,10 @@ export default function ExpertiseSection() {
                   alignItems: 'flex-start',
                   p: 2.5,
                   borderRadius: '14px',
-                  border: `1px solid ${brand.gold}e0`,
-                  background: 'rgba(255,255,255,0.025)',
+                  border: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 88%, transparent)',
+                  background: 'var(--mui-palette-brandSurface-cardTint)',
                   transition: 'transform 0.25s ease, background 0.25s ease',
-                  '&:hover': { transform: 'translateY(-3px)', background: 'rgba(255,255,255,0.055)' },
+                  '&:hover': { transform: 'translateY(-3px)', background: 'var(--mui-palette-brandSurface-cardTintHover)' },
                 }}
               >
                 <Box
@@ -94,18 +94,18 @@ export default function ExpertiseSection() {
                     borderRadius: '15px',
                     display: 'grid',
                     placeItems: 'center',
-                    border: `1px solid ${brand.gold}`,
-                    color: brand.gold2,
+                    border: '1px solid var(--mui-palette-primary-main)',
+                    color: 'brandSurface.accentText',
                     '& svg': { fontSize: 32 },
                   }}
                 >
                   {item.icon}
                 </Box>
                 <Box>
-                  <Typography variant="h3" sx={{ fontSize: 18, mb: 0.75, color: '#fff' }}>
+                  <Typography variant="h3" sx={{ fontSize: 18, mb: 0.75, color: 'text.primary' }}>
                     {item.title}
                   </Typography>
-                  <Typography sx={{ color: 'rgba(255,255,255,0.82)', fontSize: 14, lineHeight: 1.45 }}>
+                  <Typography sx={{ color: 'text.secondary', fontSize: 14, lineHeight: 1.45 }}>
                     {item.description}
                   </Typography>
                 </Box>

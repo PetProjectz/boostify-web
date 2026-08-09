@@ -21,7 +21,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PageHero from '@/components/common/PageHero';
 import ContactForm from '@/app/contact/ContactForm';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
+import { DARK_SELECTOR } from '@/cssSelectors';
 import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
@@ -121,8 +121,8 @@ export default function Contact() {
                               borderRadius: '15px',
                               display: 'grid',
                               placeItems: 'center',
-                              border: `1px solid ${brand.gold}`,
-                              color: brand.goldDark,
+                              border: '1px solid var(--mui-palette-primary-main)',
+                              color: 'brandSurface.accentText',
                             }}
                           >
                             {item.icon}
@@ -150,28 +150,42 @@ export default function Contact() {
                   </Paper>
                 </ScrollReveal>
 
-                {/* Promo card (always dark brand look) */}
+                {/* Promo card, navy + gold brand look adapted per color scheme */}
                 <ScrollReveal delay={0.2}>
                   <Paper
                     elevation={0}
                     sx={{
                       p: { xs: 3, sm: 3.5 },
                       borderRadius: '18px',
-                      color: '#fff',
+                      color: 'text.primary',
                       overflow: 'hidden',
-                      background: `linear-gradient(180deg, rgba(2,10,22,0.72), rgba(2,10,22,0.95)), url('/assets/services/social-media.webp') center/cover`,
+                      backgroundImage:
+                        "linear-gradient(180deg, var(--mui-palette-brandSurface-scrimEnd), var(--mui-palette-brandSurface-scrimEnd)), url('/assets/services/social-media-light.webp')",
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      [DARK_SELECTOR]: {
+                        backgroundImage:
+                          "linear-gradient(180deg, var(--mui-palette-brandSurface-scrimStart), var(--mui-palette-brandSurface-scrimEnd)), url('/assets/services/social-media.webp')",
+                      },
                     }}
                   >
                     <Typography
                       component="p"
-                      sx={{ color: brand.gold, fontWeight: 800, textTransform: 'uppercase', fontSize: 13, letterSpacing: '2px', mb: 1 }}
+                      sx={{
+                        color: 'brandSurface.accentText',
+                        fontWeight: 800,
+                        textTransform: 'uppercase',
+                        fontSize: 13,
+                        letterSpacing: '2px',
+                        mb: 1,
+                      }}
                     >
                       Connect With Us
                     </Typography>
-                    <Typography variant="h2" sx={{ fontSize: 26, mb: 1.5, color: '#fff' }}>
+                    <Typography variant="h2" sx={{ fontSize: 26, mb: 1.5, color: 'text.primary' }}>
                       Let&apos;s Create Something Amazing
                     </Typography>
-                    <Typography sx={{ color: 'rgba(255,255,255,0.82)' }}>
+                    <Typography sx={{ color: 'text.secondary' }}>
                       Whether you&apos;re looking to launch a new campaign, revamp your website, or build your
                       social media presence, we&apos;re here to help you succeed.
                     </Typography>
@@ -185,9 +199,9 @@ export default function Contact() {
                           aria-label={s.label}
                           size="small"
                           sx={{
-                            color: '#fff',
-                            border: `1px solid ${brand.gold}`,
-                            '&:hover': { backgroundColor: brand.gold, color: brand.onGold },
+                            color: 'text.primary',
+                            border: '1px solid var(--mui-palette-primary-main)',
+                            '&:hover': { backgroundColor: 'primary.main', color: 'primary.contrastText' },
                           }}
                         >
                           {s.icon}

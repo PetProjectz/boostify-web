@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next';
 
-import { brand } from '@/brand';
-
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Boostify - Digital Marketing Agency',
@@ -10,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
     start_url: '/',
     display: 'standalone',
-    background_color: brand.navy,
-    theme_color: brand.navy,
+    background_color: '#020a16',
+    theme_color: '#020a16',
     icons: [
       {
         src: '/icon.png',

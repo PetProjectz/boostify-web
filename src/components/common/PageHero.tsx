@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 
-import { brand } from '@/brand';
 import { easeOutExpo } from '@/app/(home)/heroShared';
 
 const MotionContainer = motion.create(Container);
@@ -22,7 +21,8 @@ interface PageHeroProps {
 }
 
 /**
- * Dark navy page header used at the top of the About and Contact pages.
+ * Navy + gold page header used at the top of the About and Contact pages,
+ * adapted per light/dark color scheme.
  */
 export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
   return (
@@ -30,12 +30,13 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
       sx={{
         position: 'relative',
         overflow: 'hidden',
-        color: '#fff',
+        color: 'text.primary',
         pt: { xs: 6, sm: 8 },
         pb: { xs: 6, sm: 8 },
-        borderBottom: `5px solid ${brand.gold}`,
-        boxShadow: `0 8px 24px ${brand.gold}38`,
-        background: `radial-gradient(circle at 15% 35%, ${brand.gold}2e, transparent 26%), radial-gradient(circle at 86% 28%, ${brand.gold}29, transparent 32%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navySoft} 100%)`,
+        borderBottom: '5px solid var(--mui-palette-primary-main)',
+        boxShadow: '0 8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
+        background:
+          'radial-gradient(circle at 15% 35%, color-mix(in srgb, var(--mui-palette-primary-main) 18%, transparent), transparent 26%), radial-gradient(circle at 86% 28%, color-mix(in srgb, var(--mui-palette-primary-main) 16%, transparent), transparent 32%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-soft) 100%)',
       }}
     >
       <MotionContainer sx={{ position: 'relative', textAlign: 'center' }}>
@@ -44,7 +45,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: heroDelays[0], ease: easeOutExpo }}
           sx={{
-            color: brand.gold,
+            color: 'brandSurface.accentText',
             fontWeight: 800,
             textTransform: 'uppercase',
             fontSize: 14,
@@ -67,7 +68,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: heroDelays[2], ease: easeOutExpo }}
-          sx={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}
+          sx={{ fontSize: 18, color: 'text.secondary', fontWeight: 500 }}
         >
           {subtitle}
         </MotionTypography>

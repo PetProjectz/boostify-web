@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import { brand } from '@/brand';
 import { fetchNewsFromSheet } from '@/lib/newsSheet';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import NewsCardImage from '@/app/news/NewsCardImage';
@@ -56,7 +55,7 @@ export default async function NewsSection() {
                       <Typography
                         component="p"
                         sx={{
-                          color: brand.gold,
+                          color: 'brandSurface.accentText',
                           fontWeight: 800,
                           textTransform: 'uppercase',
                           fontSize: 12,

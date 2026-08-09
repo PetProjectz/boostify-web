@@ -15,7 +15,6 @@ import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
 
 const reasons = [
   {
@@ -88,9 +87,9 @@ export default function WhyChooseUsSection() {
                       placeItems: 'center',
                       mb: 2.25,
                       background: 'linear-gradient(180deg, #fff6df, #fff1cb)',
-                      border: `1px solid ${brand.gold}59`,
-                      boxShadow: `0 10px 20px ${brand.gold}1f`,
-                      color: brand.goldDark,
+                      border: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 35%, transparent)',
+                      boxShadow: '0 10px 20px color-mix(in srgb, var(--mui-palette-primary-main) 12%, transparent)',
+                      color: 'primary.dark',
                       '& svg': { fontSize: 30 },
                     }}
                   >

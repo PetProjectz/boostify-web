@@ -7,10 +7,8 @@ import Button from '@mui/material/Button';
 import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-import { brand } from '@/brand';
 import HeroImageCard from '@/components/common/HeroImageCard';
 import { cardBaseSx, easeOutExpo, heroPoints } from './heroShared';
 
@@ -31,7 +29,6 @@ const contentItemVariants = {
 const imageDelays = [0.45, 0.75, 0.90];
 
 export default function HeroSectionDesktop() {
-  const theme = useTheme();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 140, damping: 20, mass: 0.5 });
@@ -67,7 +64,7 @@ export default function HeroSectionDesktop() {
         <MotionTypography
           variants={contentItemVariants}
           sx={{
-            color: brand.gold,
+            color: 'brandSurface.accentText',
             fontWeight: 800,
             textTransform: 'uppercase',
             fontSize: 13,
@@ -86,7 +83,7 @@ export default function HeroSectionDesktop() {
         </MotionTypography>
         <MotionTypography
           variants={contentItemVariants}
-          sx={{ color: alpha(theme.palette.common.white, 0.84), fontSize: 19, maxWidth: 660, mb: 3.5 }}
+          sx={{ color: 'text.secondary', fontSize: 19, maxWidth: 660, mb: 3.5 }}
         >
           Boostify partners with Sri Lankan businesses to transform digitally and embrace AI,
           combining technology, strategy, and creative excellence to help you grow faster and
@@ -99,14 +96,20 @@ export default function HeroSectionDesktop() {
             href="/contact"
             variant="contained"
             color="primary"
-            sx={{ minHeight: 48, px: 3.5, background: `linear-gradient(180deg, ${brand.goldSoft}, ${brand.gold})` }}
+            sx={{ minHeight: 48, px: 3.5, background: 'linear-gradient(180deg, var(--mui-palette-brandAccent-goldSoft), var(--mui-palette-primary-main))' }}
           >
             Get Started
           </Button>
           <Button
             href="#services"
             variant="outlined"
-            sx={{ minHeight: 48, px: 3.5, color: brand.gold2, borderColor: brand.gold, '&:hover': { background: brand.gold, color: brand.onGold, borderColor: brand.gold } }}
+            sx={{
+              minHeight: 48,
+              px: 3.5,
+              color: 'brandSurface.accentText',
+              borderColor: 'primary.main',
+              '&:hover': { background: 'primary.main', color: 'primary.contrastText', borderColor: 'primary.main' },
+            }}
           >
             Explore Services
           </Button>
@@ -121,11 +124,11 @@ export default function HeroSectionDesktop() {
                   height: 10,
                   borderRadius: '50%',
                   flex: '0 0 auto',
-                  background: `linear-gradient(180deg, ${brand.goldSoft}, ${brand.gold})`,
-                  boxShadow: `0 0 18px ${alpha(brand.gold, 0.65)}`,
+                  background: 'linear-gradient(180deg, var(--mui-palette-brandAccent-goldSoft), var(--mui-palette-primary-main))',
+                  boxShadow: '0 0 18px color-mix(in srgb, var(--mui-palette-primary-main) 65%, transparent)',
                 }}
               />
-              <Typography sx={{ fontSize: 15, color: alpha(theme.palette.common.white, 0.85) }}>{point}</Typography>
+              <Typography sx={{ fontSize: 15, color: 'text.secondary' }}>{point}</Typography>
             </Stack>
           ))}
         </MotionStack>

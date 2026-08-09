@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import { brand } from '@/brand';
 
 export default function Error({
   error,
@@ -25,18 +24,19 @@ export default function Error({
       sx={{
         position: 'relative',
         overflow: 'hidden',
-        color: '#fff',
+        color: 'text.primary',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: `radial-gradient(circle at 50% -20%, ${brand.gold}21, transparent 33%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navy3} 100%)`,
+        background:
+          'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
       }}
     >
       <Container sx={{ textAlign: 'center', py: 8 }}>
         <Typography
           sx={{
-            color: brand.gold,
+            color: 'brandSurface.accentText',
             fontWeight: 800,
             textTransform: 'uppercase',
             fontSize: 14,
@@ -49,7 +49,7 @@ export default function Error({
         <Typography variant="h1" sx={{ fontSize: 'clamp(36px, 6vw, 56px)', letterSpacing: '-0.06em', mb: 2 }}>
           We hit a snag
         </Typography>
-        <Typography sx={{ fontSize: 18, color: 'rgba(255,255,255,0.82)', maxWidth: 560, mx: 'auto', mb: 4 }}>
+        <Typography sx={{ fontSize: 18, color: 'text.secondary', maxWidth: 560, mx: 'auto', mb: 4 }}>
           An unexpected error occurred while loading this page. Please try again.
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -57,12 +57,12 @@ export default function Error({
             onClick={() => reset()}
             variant="contained"
             sx={{
-              bgcolor: brand.gold,
-              color: brand.onGold,
+              bgcolor: 'primary.main',
+              color: 'primary.contrastText',
               fontWeight: 700,
               px: 4,
               py: 1.25,
-              '&:hover': { bgcolor: brand.goldDark },
+              '&:hover': { bgcolor: 'primary.dark' },
             }}
           >
             Try Again

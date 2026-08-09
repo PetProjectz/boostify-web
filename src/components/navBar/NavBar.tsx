@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -11,14 +11,14 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Image from 'next/image';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import ColorModeIconDropdown from '@/components/navBar/ColorModeIconDropDown';
-import { brand } from '@/brand';
+import ThemedImage from '@/components/common/ThemedImage';
+import { DARK_SELECTOR } from '@/cssSelectors';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -27,15 +27,21 @@ const navItems = [
   { label: 'Contact', href: '/contact' },
 ];
 
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
+const StyledAppBar = styled(AppBar)({
   position: 'sticky',
   top: 0,
-  backgroundColor: alpha(brand.navy, 0.97),
+  backgroundColor: '#ffffff',
   backdropFilter: 'blur(12px)',
-  borderBottom: `1px solid ${alpha(theme.palette.common.white, 0.08)}`,
+  border: 'none',
   boxShadow: 'none',
   backgroundImage: 'none',
-}));
+  [DARK_SELECTOR]: {
+    // alpha() can't parse a CSS var() reference (it needs a real color value
+    // at module-eval time) — color-mix() does the equivalent blend in the
+    // browser at paint time, so it works with the reactive theme variable.
+    backgroundColor: 'color-mix(in srgb, var(--mui-palette-brandSurface-deep) 97%, transparent)',
+  },
+});
 
 export default function NavBar() {
   const [open, setOpen] = React.useState(false);
@@ -53,7 +59,15 @@ export default function NavBar() {
       <Container maxWidth="lg" disableGutters>
         <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, position: 'relative' }}>
           <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', zIndex: 1 }}>
-            <Image src="/assets/brand/boostify-logo.webp" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} priority />
+            <ThemedImage
+              lightSrc="/assets/brand/boostify-logo-light.webp"
+              darkSrc="/assets/brand/boostify-logo.webp"
+              alt="Boostify"
+              width={80}
+              height={28}
+              style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+              priority
+            />
           </Box>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center' }}>
@@ -64,12 +78,12 @@ export default function NavBar() {
                 component={NextLink}
                 href={item.href}
                 sx={{
-                  color: isActive(item.href) ? brand.gold2 : 'common.white',
+                  color: isActive(item.href) ? 'brandSurface.accentText' : 'text.primary',
                   fontWeight: isActive(item.href) ? 800 : 700,
                   fontSize: '14px',
                   textTransform: 'none',
                   '&:hover': {
-                    color: brand.gold2,
+                    color: 'brandSurface.accentText',
                   },
                 }}
               >
@@ -86,22 +100,22 @@ export default function NavBar() {
               zIndex: 1,
             }}
           >
-            <ColorModeIconDropdown sx={{ color: brand.gold2 }} />
+            <ColorModeIconDropdown sx={{ color: 'brandSurface.accentText' }} />
             <Button
               variant="outlined"
               component={NextLink}
               href="/contact"
               sx={{
-                borderColor: brand.gold,
-                color: brand.gold2,
+                borderColor: 'primary.main',
+                color: 'brandSurface.accentText',
                 fontWeight: 800,
                 fontSize: '14px',
                 textTransform: 'none',
                 minHeight: '46px',
                 minWidth: '160px',
                 '&:hover': {
-                  backgroundColor: brand.gold,
-                  color: brand.onGold,
+                  backgroundColor: 'primary.main',
+                  color: 'primary.contrastText',
                 },
               }}
             >
@@ -110,8 +124,15 @@ export default function NavBar() {
           </Box>
 
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 0.5, alignItems: 'center' }}>
-            <ColorModeIconDropdown size="medium" sx={{ color: brand.gold2 }} />
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)} sx={{ color: brand.gold2 }}>
+            <ColorModeIconDropdown
+              size="medium"
+              sx={{ color: 'brandSurface.accentText' }}
+            />
+            <IconButton
+              aria-label="Menu button"
+              onClick={toggleDrawer(true)}
+              sx={{ color: 'brandSurface.accentText' }}
+            >
               <MenuIcon />
             </IconButton>
           </Box>

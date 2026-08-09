@@ -11,7 +11,6 @@ import Image from 'next/image';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
 
 const directors = [
   {
@@ -85,15 +84,22 @@ export default function DirectorsSection() {
                           aria-label={`${director.name} on LinkedIn`}
                           size="small"
                           sx={{
-                            color: brand.goldDark,
+                            color: 'brandSurface.accentText',
                             p: 0.5,
-                            '&:hover': { color: brand.gold, backgroundColor: 'transparent' },
+                            '&:hover': { color: 'brandSurface.accentText', backgroundColor: 'transparent' },
                           }}
                         >
                           <LinkedInIcon fontSize="small" />
                         </IconButton>
                       </Box>
-                      <Typography sx={{ color: brand.goldDark, fontSize: 13, fontWeight: 700, mb: 1.5 }}>
+                      <Typography
+                        sx={{
+                          color: 'brandSurface.accentText',
+                          fontSize: 13,
+                          fontWeight: 700,
+                          mb: 1.5,
+                        }}
+                      >
                         {director.role}
                       </Typography>
                       <Typography sx={{ color: 'text.secondary', fontSize: 13, lineHeight: 1.55 }}>

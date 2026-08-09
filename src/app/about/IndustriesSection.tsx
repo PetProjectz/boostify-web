@@ -15,7 +15,6 @@ import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
 
 const industries = [
   { icon: <FactoryRoundedIcon />, title: 'Manufacturing', description: 'Automation, production systems, industrial branding, and digital transformation.' },
@@ -52,7 +51,15 @@ export default function IndustriesSection() {
                     boxShadow: '0 14px 32px rgba(5, 18, 45, 0.08)',
                   }}
                 >
-                  <Box sx={{ color: brand.gold2, mb: 1.25, '& svg': { fontSize: 44 } }}>{industry.icon}</Box>
+                  <Box
+                    sx={{
+                      color: 'brandSurface.accentText',
+                      mb: 1.25,
+                      '& svg': { fontSize: 44 },
+                    }}
+                  >
+                    {industry.icon}
+                  </Box>
                   <Typography variant="h3" sx={{ fontSize: 14, mb: 1, color: 'text.primary' }}>
                     {industry.title}
                   </Typography>
