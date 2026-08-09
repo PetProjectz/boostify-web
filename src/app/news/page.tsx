@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import PageHero from '@/components/common/PageHero';
 import NewsSection from '@/app/news/NewsSection';
+import NewsSectionFallback from '@/app/news/NewsSectionFallback';
 import CtaSection from '@/components/common/CtaSection';
 
 export const metadata: Metadata = {
@@ -26,7 +27,9 @@ export default function News() {
         title="Latest News"
         subtitle="Updates, insights, and stories from the industry."
       />
-      <NewsSection />
+      <React.Suspense fallback={<NewsSectionFallback />}>
+        <NewsSection />
+      </React.Suspense>
       <CtaSection />
     </>
   );
