@@ -14,13 +14,13 @@ const services = [
     image: '/assets/services/social-media.webp',
     title: 'Social Media & Digital Growth',
     description:
-      'We help businesses build a strong digital presence and grow their audience through strategic social media management. From creating engaging posts, videos, and campaign content to managing and optimizing paid advertising, we deliver consistent digital experiences that connect your brand with the right audience and drive growth.',
+      'Strategic social media management that grows your audience. From engaging posts, videos, and campaign content to optimized paid advertising that connects your brand with the right people.',
   },
   {
     image: '/assets/services/web-development.webp',
     title: 'Web and Mobile Application Development',
     description:
-      'Advanced web, mobile, and AI application development leveraging modern frameworks, machine learning, cloud technologies, and intelligent automation to create secure, scalable, and high-performance digital solutions.',
+      'Web, mobile, and AI application development built on modern frameworks, machine learning, and cloud technologies to deliver secure, scalable, high-performance solutions.',
   },
   {
     image: '/assets/services/blockchain.webp',
@@ -32,7 +32,7 @@ const services = [
     image: '/assets/services/digital-marketing.webp',
     title: 'Advanced Search & Discoverability',
     description:
-      'Increase your visibility across the platforms where customers search for your business. We combine Search Engine Optimization (SEO), Generative Engine Optimization (GEO), and local search strategies to improve discoverability across search engines, AI platforms, and location-based services.',
+      'Get found wherever customers search. We combine SEO, Generative Engine Optimization (GEO), and local search to boost your visibility across search engines, AI platforms, and maps.',
   },
 ];
 
