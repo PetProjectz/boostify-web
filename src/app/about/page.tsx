@@ -9,10 +9,10 @@ import IndustriesSection from '@/app/about/IndustriesSection';
 import CtaSection from '@/components/common/CtaSection';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About',
   description: 'We help businesses grow, connect, and succeed in the digital world.',
   openGraph: {
-    title: 'About Us | Boostify',
+    title: 'About | Boostify',
     description: 'We help businesses grow, connect, and succeed in the digital world.',
     url: 'https://boostify.lk/about',
   },

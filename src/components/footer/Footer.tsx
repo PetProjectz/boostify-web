@@ -29,7 +29,7 @@ const services = [
   'Performance Marketing & Social Commerce',
   'Web & Mobile Application Development',
   'Business Process Automation',
-  'Advanced Search & Discoverability (SEO + GEO)',
+  'Advanced Search & Discoverability',
 ];
 
 const socials = [

@@ -12,9 +12,9 @@ import { brand } from '@/brand';
 const services = [
   {
     image: '/assets/services/social-media.webp',
-    title: 'Performance Marketing & Social Commerce',
+    title: 'Social Media & Digital Growth',
     description:
-      'Turn clicks into customers and scale your revenue. We move past vanity metrics like "likes" to focus on what matters: leads and sales. We design data-driven ad campaigns and high-converting WhatsApp funnels that directly impact your bottom line.',
+      'We help businesses build a strong digital presence and grow their audience through strategic social media management. From creating engaging posts, videos, and campaign content to managing and optimizing paid advertising, we deliver consistent digital experiences that connect your brand with the right audience and drive growth.',
   },
   {
     image: '/assets/services/web-development.webp',
@@ -30,9 +30,9 @@ const services = [
   },
   {
     image: '/assets/services/digital-marketing.webp',
-    title: 'Advanced Search & Discoverability (SEO + GEO)',
+    title: 'Advanced Search & Discoverability',
     description:
-      'Be found exactly when your customers are looking. We ensure your business dominates search results—whether someone is searching on Google, asking AI engines like ChatGPT, or looking for local services on Maps.',
+      'Increase your visibility across the platforms where customers search for your business. We combine Search Engine Optimization (SEO), Generative Engine Optimization (GEO), and local search strategies to improve discoverability across search engines, AI platforms, and location-based services.',
   },
 ];
 
@@ -48,7 +48,12 @@ export default function ServicesSection() {
     >
       <Container>
         <ScrollReveal>
-          <SectionHeading tag="What We Do" title="Our Services" align="center" light />
+          <SectionHeading
+            tag="What We Do"
+            title="Our Services"
+            align="center"
+            light
+          />
         </ScrollReveal>
         <Grid container spacing={3} sx={{ mt: 2 }}>
           {services.map((service, index) => (
@@ -64,7 +69,10 @@ export default function ServicesSection() {
                   border: `1px solid ${brand.gold}bf`,
                   boxShadow: '0 20px 45px rgba(0,0,0,0.18)',
                   transition: 'transform 0.25s ease, border-color 0.25s ease',
-                  '&:hover': { transform: 'translateY(-5px)', borderColor: brand.gold },
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    borderColor: brand.gold,
+                  },
                   '&::before': {
                     content: '""',
                     position: 'absolute',
@@ -74,14 +82,25 @@ export default function ServicesSection() {
                     backgroundPosition: 'center',
                     transition: 'transform 0.25s ease',
                   },
-                  '&:hover::before': { transform: 'scale(1.04)' },
+                  '&:hover::before': {
+                    transform: 'scale(1.04)',
+                  },
                 }}
               >
-                <Box sx={{ position: 'absolute', inset: 'auto 0 0', p: 3.5, zIndex: 1 }}>
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    inset: 'auto 0 0',
+                    p: 3.5,
+                    zIndex: 1,
+                  }}
+                >
                   <Typography variant="h3" sx={{ fontSize: 24, mb: 1.25 }}>
                     {service.title}
                   </Typography>
-                  <Typography sx={{ color: 'rgba(255,255,255,0.82)' }}>{service.description}</Typography>
+                  <Typography sx={{ color: 'rgba(255,255,255,0.82)' }}>
+                    {service.description}
+                  </Typography>
                 </Box>
               </ScrollReveal>
             </Grid>

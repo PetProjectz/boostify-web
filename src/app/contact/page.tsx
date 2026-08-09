@@ -25,10 +25,10 @@ import { brand } from '@/brand';
 import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact',
   description: 'Ready to boost your digital presence? Get in touch with us today.',
   openGraph: {
-    title: 'Contact Us | Boostify',
+    title: 'Contact | Boostify',
     description: 'Ready to boost your digital presence? Get in touch with us today.',
     url: 'https://boostify.lk/contact',
   },
