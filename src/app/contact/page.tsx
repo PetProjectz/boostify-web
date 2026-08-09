@@ -21,7 +21,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PageHero from '@/components/common/PageHero';
 import ContactForm from '@/app/contact/ContactForm';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { pageHeroSettleDelay } from '@/app/(home)/heroShared';
 import { brand } from '@/brand';
 import { socialLinks } from '@/socialLinks';
 
@@ -94,7 +93,7 @@ export default function Contact() {
         <Container>
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 7 }}>
-              <ScrollReveal delay={pageHeroSettleDelay}>
+              <ScrollReveal>
                 <ContactForm />
               </ScrollReveal>
             </Grid>
@@ -102,7 +101,7 @@ export default function Contact() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Stack spacing={2.75}>
                 {/* Contact information */}
-                <ScrollReveal delay={pageHeroSettleDelay + 0.1}>
+                <ScrollReveal delay={0.1}>
                   <Paper
                     elevation={0}
                     variant="outlined"
@@ -152,7 +151,7 @@ export default function Contact() {
                 </ScrollReveal>
 
                 {/* Promo card (always dark brand look) */}
-                <ScrollReveal delay={pageHeroSettleDelay + 0.2}>
+                <ScrollReveal delay={0.2}>
                   <Paper
                     elevation={0}
                     sx={{

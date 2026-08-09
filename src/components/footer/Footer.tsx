@@ -21,14 +21,15 @@ import { socialLinks } from '@/socialLinks';
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
+  { label: 'News', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ];
 
 const services = [
-  'Web & Mobile Application Development',
-  'Advanced Search & Discoverability (SEO + GEO)',
   'Performance Marketing & Social Commerce',
+  'Web & Mobile Application Development',
   'Business Process Automation',
+  'Advanced Search & Discoverability (SEO + GEO)',
 ];
 
 const socials = [

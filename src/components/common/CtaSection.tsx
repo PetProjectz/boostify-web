@@ -18,6 +18,8 @@ export default function CtaSection() {
     <Box sx={{ bgcolor: 'background.default', pb: 2 }}>
       <Container sx={{ px: { xs: 2, sm: 3 } }}>
         <ScrollReveal
+          amount={0.4}
+          delay={0.2}
           sx={{
             borderRadius: 3,
             overflow: 'hidden',
