@@ -16,6 +16,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Copyright from '@/components/footer/Copyright';
 import { brand } from '@/brand';
+import { services } from '@/services';
 import { socialLinks } from '@/socialLinks';
 
 const quickLinks = [
@@ -23,13 +24,6 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'News', href: '/news' },
   { label: 'Contact', href: '/contact' },
-];
-
-const services = [
-  'Performance Marketing & Social Commerce',
-  'Web & Mobile Application Development',
-  'Business Process Automation',
-  'Advanced Search & Discoverability',
 ];
 
 const socials = [
@@ -80,9 +74,9 @@ export default function Footer() {
 
           <Grid size={{ xs: 6, sm: 3, md: 3 }}>
             <Typography sx={headingSx}>Services</Typography>
-            {services.map((s) => (
-              <Typography key={s} sx={linkSx}>
-                {s}
+            {services.map((service) => (
+              <Typography key={service.title} sx={linkSx}>
+                {service.title}
               </Typography>
             ))}
           </Grid>
