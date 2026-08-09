@@ -13,7 +13,7 @@ import ThemeProvider from '@/contexts/ThemeContext';
 export const metadata: Metadata = {
   metadataBase: new URL('https://boostify.lk'),
   title: {
-    default: 'Boostify - Digital Marketing Agency',
+    default: 'Boostify',
     template: '%s | Boostify',
   },
   description:

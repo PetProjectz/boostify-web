@@ -16,8 +16,10 @@ import ScrollReveal from '@/components/common/ScrollReveal';
 export default function CtaSection() {
   return (
     <Box sx={{ bgcolor: 'background.default', pb: 2 }}>
-      <Container sx={{ px: { xs: 0, sm: 3 } }}>
+      <Container sx={{ px: { xs: 2, sm: 3 } }}>
         <ScrollReveal
+          amount={0.4}
+          delay={0.2}
           sx={{
             borderRadius: 3,
             overflow: 'hidden',

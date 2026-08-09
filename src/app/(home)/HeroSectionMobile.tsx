@@ -73,7 +73,6 @@ export default function HeroSectionMobile() {
 
       <MotionStack
         direction="row"
-        spacing={2}
         initial={{ opacity: 0, y: 26 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: mobileDelays[4], ease: easeOutExpo }}

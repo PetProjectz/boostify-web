@@ -28,6 +28,8 @@ const contentItemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutExpo } },
 };
 
+const imageDelays = [0.45, 0.75, 0.90];
+
 export default function HeroSectionDesktop() {
   const theme = useTheme();
   const mouseX = useMotionValue(0);
@@ -145,7 +147,7 @@ export default function HeroSectionDesktop() {
           <HeroImageCard
             src="/assets/hero/hero-1.webp"
             alt="Digital solutions"
-            delay={0.2}
+            delay={imageDelays[0]}
             parallaxDepth={10}
             springX={springX}
             springY={springY}
@@ -155,7 +157,7 @@ export default function HeroSectionDesktop() {
           <HeroImageCard
             src="/assets/hero/hero-2.webp"
             alt="Creative studio"
-            delay={0.36}
+            delay={imageDelays[1]}
             parallaxDepth={22}
             springX={springX}
             springY={springY}
@@ -165,7 +167,7 @@ export default function HeroSectionDesktop() {
           <HeroImageCard
             src="/assets/hero/hero-3.webp"
             alt="Technology"
-            delay={0.52}
+            delay={imageDelays[2]}
             parallaxDepth={18}
             springX={springX}
             springY={springY}

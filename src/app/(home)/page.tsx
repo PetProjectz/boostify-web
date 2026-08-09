@@ -10,7 +10,6 @@ import CtaSection from '@/components/common/CtaSection';
 import { socialLinks } from '@/socialLinks';
 
 export const metadata: Metadata = {
-  title: 'Digital & AI Transformation Partner in Sri Lanka',
   description:
     "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",
   openGraph: {
