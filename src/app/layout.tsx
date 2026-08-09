@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://boostify.lk'),
   title: {
     default: 'Boostify',
-    template: '%s | Boostify',
+    template: 'Boostify | %s',
   },
   description:
     'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster and lead confidently in the digital world.',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'digital marketing agency Sri Lanka',
     'web and mobile app development',
     'business process automation',
-    'performance marketing',
+    'social media marketing',
     'social commerce',
     'SEO Sri Lanka',
     'brand identity and design',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://boostify.lk',
     siteName: 'Boostify',
-    title: 'Boostify - Digital Marketing Agency',
+    title: 'Boostify - Digital Transformation Partner',
     description:
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
     images: [
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Boostify - Digital Marketing Agency',
+    title: 'Boostify - Digital Transformation Partner',
     description:
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
     images: ['/assets/brand/boostify-logo.webp'],
