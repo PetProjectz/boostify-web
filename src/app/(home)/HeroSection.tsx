@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
+import { heroLineProps } from '@/cssSelectors';
+
 import HeroSectionDesktop from './HeroSectionDesktop';
 import HeroSectionMobile from './HeroSectionMobile';
 
@@ -11,6 +13,7 @@ function HeroSection() {
   return (
     <Box
       id="hero"
+      {...heroLineProps}
       sx={{
         position: 'relative',
         overflow: 'hidden',

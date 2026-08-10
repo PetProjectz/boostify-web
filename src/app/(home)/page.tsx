@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",
   openGraph: {
+    siteName: 'Boostify LK',
     title: 'Boostify - Digital & AI Transformation Partner in Sri Lanka',
     description:
       "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",

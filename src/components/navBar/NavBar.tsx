@@ -18,7 +18,8 @@ import { usePathname } from 'next/navigation';
 
 import ColorModeToggle from '@/components/navBar/ColorModeToggle';
 import ThemedImage from '@/components/common/ThemedImage';
-import { DARK_SELECTOR } from '@/cssSelectors';
+import useNavLineHandoff from '@/hooks/useNavLineHandoff';
+import { DARK_SELECTOR, NAV_LINE_ATTR } from '@/cssSelectors';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -44,11 +45,20 @@ const StyledAppBar = styled(AppBar)({
     height: '2px',
     background:
       'linear-gradient(90deg, transparent, var(--mui-palette-primary-main) 20%, var(--mui-palette-primary-main) 80%, transparent)',
+    transform: 'scaleX(0)',
+    transformOrigin: 'center',
+    transition: 'transform 900ms cubic-bezier(0.16, 1, 0.3, 1)',
+    willChange: 'transform',
+  },
+  [`&[${NAV_LINE_ATTR}="on"]::after`]: {
+    transform: 'scaleX(1)',
+  },
+  '@media (prefers-reduced-motion: reduce)': {
+    '&::after': {
+      transition: 'none',
+    },
   },
   [DARK_SELECTOR]: {
-    // alpha() can't parse a CSS var() reference (it needs a real color value
-    // at module-eval time) — color-mix() does the equivalent blend in the
-    // browser at paint time, so it works with the reactive theme variable.
     backgroundColor: 'color-mix(in srgb, var(--mui-palette-brandSurface-deep) 97%, transparent)',
   },
 });
@@ -56,6 +66,7 @@ const StyledAppBar = styled(AppBar)({
 export default function NavBar() {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const navRef = useNavLineHandoff(pathname);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -65,7 +76,7 @@ export default function NavBar() {
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
-    <StyledAppBar enableColorOnDark sx={{ zIndex: 50 }}>
+    <StyledAppBar ref={navRef} enableColorOnDark sx={{ zIndex: 50 }}>
       <Container maxWidth="lg" disableGutters>
         <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, position: 'relative' }}>
           <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', zIndex: 1 }}>
