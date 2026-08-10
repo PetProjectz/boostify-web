@@ -14,6 +14,7 @@ import AutoModeRoundedIcon from '@mui/icons-material/AutoModeRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { DARK_SELECTOR } from '@/cssSelectors';
 
 const expertise = [
   {
@@ -84,6 +85,10 @@ export default function ExpertiseSection() {
                   background: '#fff',
                   transition: 'transform 0.25s ease, background 0.25s ease',
                   '&:hover': { transform: 'translateY(-3px)', background: '#faf6ef' },
+                  [DARK_SELECTOR]: {
+                    background: 'var(--mui-palette-brandSurface-cardTint)',
+                    '&:hover': { background: 'var(--mui-palette-brandSurface-cardTintHover)' },
+                  },
                 }}
               >
                 <Box
@@ -96,16 +101,22 @@ export default function ExpertiseSection() {
                     placeItems: 'center',
                     border: '1px solid var(--mui-palette-primary-main)',
                     color: '#5c3500',
+                    [DARK_SELECTOR]: { color: 'brandSurface.accentText' },
                     '& svg': { fontSize: 32 },
                   }}
                 >
                   {item.icon}
                 </Box>
                 <Box>
-                  <Typography variant="h3" sx={{ fontSize: 18, mb: 0.75, color: 'rgba(0,0,0,0.87)' }}>
+                  <Typography
+                    variant="h3"
+                    sx={{ fontSize: 18, mb: 0.75, color: 'rgba(0,0,0,0.87)', [DARK_SELECTOR]: { color: 'text.primary' } }}
+                  >
                     {item.title}
                   </Typography>
-                  <Typography sx={{ color: 'rgba(0,0,0,0.6)', fontSize: 14, lineHeight: 1.45 }}>
+                  <Typography
+                    sx={{ color: 'rgba(0,0,0,0.6)', fontSize: 14, lineHeight: 1.45, [DARK_SELECTOR]: { color: 'text.secondary' } }}
+                  >
                     {item.description}
                   </Typography>
                 </Box>
