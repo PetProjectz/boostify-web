@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 
 import { easeOutExpo } from '@/app/(home)/heroShared';
+import { heroLineProps } from '@/cssSelectors';
 
 const MotionTypography = motion.create(Typography);
 
@@ -26,6 +27,7 @@ interface PageHeroProps {
 export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
   return (
     <Box
+      {...heroLineProps}
       sx={{
         position: 'relative',
         overflow: 'hidden',
@@ -33,7 +35,6 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         pt: { xs: 6, sm: 8 },
         pb: { xs: 6, sm: 8 },
         borderBottom: '2px solid var(--mui-palette-primary-main)',
-        boxShadow: '0 8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
         background:
           'radial-gradient(circle at 15% 35%, color-mix(in srgb, var(--mui-palette-primary-main) 18%, transparent), transparent 26%), radial-gradient(circle at 86% 28%, color-mix(in srgb, var(--mui-palette-primary-main) 16%, transparent), transparent 32%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-soft) 100%)',
       }}
