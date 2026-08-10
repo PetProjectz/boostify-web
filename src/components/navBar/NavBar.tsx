@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import ColorModeIconDropdown from '@/components/navBar/ColorModeIconDropDown';
+import ColorModeToggle from '@/components/navBar/ColorModeToggle';
 import ThemedImage from '@/components/common/ThemedImage';
 import { DARK_SELECTOR } from '@/cssSelectors';
 
@@ -33,8 +33,18 @@ const StyledAppBar = styled(AppBar)({
   backgroundColor: '#ffffff',
   backdropFilter: 'blur(12px)',
   border: 'none',
-  boxShadow: 'none',
+  boxShadow: '0 8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
   backgroundImage: 'none',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: '2px',
+    background:
+      'linear-gradient(90deg, transparent, var(--mui-palette-primary-main) 20%, var(--mui-palette-primary-main) 80%, transparent)',
+  },
   [DARK_SELECTOR]: {
     // alpha() can't parse a CSS var() reference (it needs a real color value
     // at module-eval time) — color-mix() does the equivalent blend in the
@@ -100,7 +110,7 @@ export default function NavBar() {
               zIndex: 1,
             }}
           >
-            <ColorModeIconDropdown sx={{ color: 'brandSurface.accentText' }} />
+            <ColorModeToggle sx={{ color: 'brandSurface.accentText' }} />
             <Button
               variant="outlined"
               component={NextLink}
@@ -124,7 +134,7 @@ export default function NavBar() {
           </Box>
 
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 0.5, alignItems: 'center' }}>
-            <ColorModeIconDropdown
+            <ColorModeToggle
               size="medium"
               sx={{ color: 'brandSurface.accentText' }}
             />

@@ -72,15 +72,18 @@ const brandAccent: BrandAccentPalette = {
     goldSoft: "#ffc75a",
 };
 
+// Same navy hue as brandSurfaceDark (~218°), lifted to a light-but-saturated
+// tint instead of a neutral cream, so light mode reads as "the brand's blue"
+// rather than "a generic light theme".
 const brandSurfaceLight: BrandSurfacePalette = {
-    deep: "#fbf7ee",
-    mid: "#f6efe0",
-    soft: "#faf4e7",
+    deep: "#b3c9ef", // skyDeep
+    mid: "#a1bfed", // sky3
+    soft: "#94b2e6", // skySoft
     cardTint: "rgba(11,18,32,0.03)",
     cardTintHover: "rgba(11,18,32,0.06)",
-    scrimStart: "rgba(251,247,238,0.55)",
-    scrimEnd: "rgba(251,247,238,0.92)",
-    accentText: "#8a5600",
+    scrimStart: "rgba(148,178,230,0.55)",
+    scrimEnd: "rgba(148,178,230,0.92)",
+    accentText: "#5c3500",
 };
 
 const brandSurfaceDark: BrandSurfacePalette = {
@@ -99,6 +102,7 @@ const theme = createTheme({
         light: { palette: { primary, secondary, brandAccent, brandSurface: brandSurfaceLight } },
         dark: { palette: { primary, secondary, brandAccent, brandSurface: brandSurfaceDark } },
     },
+    defaultColorScheme: "dark",
     cssVariables: {
         colorSchemeSelector: "class",
     },

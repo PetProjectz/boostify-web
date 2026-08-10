@@ -90,8 +90,8 @@ export default function HeroSectionMobile() {
             minHeight: 48,
             px: 3.5,
             color: 'brandSurface.accentText',
-            borderColor: 'primary.main',
-            '&:hover': { background: 'primary.main', color: 'primary.contrastText', borderColor: 'primary.main' },
+            borderColor: 'brandSurface.accentText',
+            '&:hover': { backgroundColor: 'primary.main', color: 'primary.contrastText', borderColor: 'primary.main' },
           }}
         >
           Explore Services

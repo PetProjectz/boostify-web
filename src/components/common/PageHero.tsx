@@ -32,7 +32,7 @@ export default function PageHero({ tag, title, subtitle }: PageHeroProps) {
         color: 'text.primary',
         pt: { xs: 6, sm: 8 },
         pb: { xs: 6, sm: 8 },
-        borderBottom: '5px solid var(--mui-palette-primary-main)',
+        borderBottom: '2px solid var(--mui-palette-primary-main)',
         boxShadow: '0 8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
         background:
           'radial-gradient(circle at 15% 35%, color-mix(in srgb, var(--mui-palette-primary-main) 18%, transparent), transparent 26%), radial-gradient(circle at 86% 28%, color-mix(in srgb, var(--mui-palette-primary-main) 16%, transparent), transparent 32%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-soft) 100%)',

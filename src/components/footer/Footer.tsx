@@ -46,9 +46,21 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
+        position: 'relative',
         color: 'text.primary',
         pt: 4,
         background: '#ffffff',
+        boxShadow: '0 -8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          height: '2px',
+          background:
+            'linear-gradient(90deg, transparent, var(--mui-palette-primary-main) 20%, var(--mui-palette-primary-main) 80%, transparent)',
+        },
         [DARK_SELECTOR]: {
           background:
             'radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--mui-palette-primary-main) 8%, transparent), transparent 24%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',

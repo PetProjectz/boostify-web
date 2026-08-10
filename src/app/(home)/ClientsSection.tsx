@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { DARK_SELECTOR } from '@/cssSelectors';
 
 const clients = [
   { src: '/assets/clients/goldlac-logo.jpg', alt: 'Goldlac', href: 'https://paintfactory.lk' },
@@ -19,7 +20,13 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <Box sx={{ pb: { xs: 7, sm: 8 }, bgcolor: 'background.default' }}>
+    <Box
+      sx={{
+        pb: { xs: 7, sm: 8 },
+        backgroundColor: 'var(--mui-palette-brandSurface-mid)',
+        [DARK_SELECTOR]: { backgroundColor: 'var(--mui-palette-background-default)' },
+      }}
+    >
       <Container>
         <ScrollReveal>
           <SectionHeading tag="Trusted By" title="Our Clients" align="center" />

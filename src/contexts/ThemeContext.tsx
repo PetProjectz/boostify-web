@@ -18,27 +18,13 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { mode, setMode } = useColorScheme();
-  const [systemTheme, setSystemTheme] = useState<ThemeMode>(ThemeMode.LIGHT);
   const [isThemeReady, setIsThemeReady] = useState(false);
 
-  // Determine the actual theme mode
-  const themeMode = mode === 'system' ? systemTheme : (mode as ThemeMode);
-
   useEffect(() => {
-    // Check system preference
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const initialSystemTheme = mediaQuery.matches ? ThemeMode.DARK : ThemeMode.LIGHT;
-    setSystemTheme(initialSystemTheme);
     setIsThemeReady(true);
-
-    // Listen for system theme changes
-    const handleChange = (e: MediaQueryListEvent) => {
-      setSystemTheme(e.matches ? ThemeMode.DARK : ThemeMode.LIGHT);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
+  const themeMode = (mode ?? ThemeMode.DARK) as ThemeMode;
 
   const setThemeMode = (mode: ThemeMode) => {
     setMode(mode);

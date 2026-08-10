@@ -20,8 +20,13 @@ export default function ServicesSection() {
       sx={{
         color: 'text.primary',
         py: 8,
-        background:
-          'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
+        backgroundColor: 'background.default',
+        backgroundImage:
+          'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%)',
+        [DARK_SELECTOR]: {
+          backgroundImage:
+            'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
+        },
       }}
     >
       <Container>
@@ -39,7 +44,7 @@ export default function ServicesSection() {
                 delay={Math.min(index * 0.1, 0.3)}
                 sx={{
                   position: 'relative',
-                  minHeight: 300,
+                  minHeight: { xs: 220, md: 300 },
                   height: '100%',
                   borderRadius: '18px',
                   overflow: 'hidden',
@@ -74,10 +79,10 @@ export default function ServicesSection() {
                   sx={{
                     position: 'absolute',
                     inset: 'auto 0 0',
-                    p: 3.5,
-                    pt: 2.5,
+                    p: { xs: 2.25, md: 3.5 },
+                    pt: { xs: 1.75, md: 2.5 },
                     zIndex: 1,
-                    background: 'linear-gradient(180deg, transparent, var(--mui-palette-brandSurface-scrimEnd) 45%)',
+                    background: 'linear-gradient(180deg, transparent, var(--mui-palette-background-default) 45%)',
                     borderTop: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 33%, transparent)',
                     backdropFilter: 'blur(6px)',
                     [DARK_SELECTOR]: {
@@ -87,10 +92,10 @@ export default function ServicesSection() {
                     },
                   }}
                 >
-                  <Typography variant="h3" sx={{ fontSize: 24, mb: 1.25, color: 'text.primary' }}>
+                  <Typography variant="h3" sx={{ fontSize: 24, mb: { xs: 0, md: 1.25 }, color: 'text.primary' }}>
                     {service.title}
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary' }}>
+                  <Typography sx={{ color: 'text.secondary', display: { xs: 'none', md: 'block' } }}>
                     {service.description}
                   </Typography>
                 </Box>

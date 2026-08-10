@@ -15,7 +15,7 @@ function HeroSection() {
         position: 'relative',
         overflow: 'hidden',
         color: 'text.primary',
-        borderBottom: '5px solid var(--mui-palette-primary-main)',
+        borderBottom: '2px solid var(--mui-palette-primary-main)',
         background: `${glow}, linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-soft) 100%)`,
       }}
     >

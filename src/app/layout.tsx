@@ -87,9 +87,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <InitColorSchemeScript attribute="class" />
+        <InitColorSchemeScript attribute="class" defaultMode="dark" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <MuiThemeProvider theme={theme}>
+          <MuiThemeProvider theme={theme} defaultMode="dark">
             <CssBaseline />
             <ThemeProvider>
               <AppShell>

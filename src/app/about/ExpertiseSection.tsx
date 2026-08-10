@@ -81,9 +81,9 @@ export default function ExpertiseSection() {
                   p: 2.5,
                   borderRadius: '14px',
                   border: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 88%, transparent)',
-                  background: 'var(--mui-palette-brandSurface-cardTint)',
+                  background: '#fff',
                   transition: 'transform 0.25s ease, background 0.25s ease',
-                  '&:hover': { transform: 'translateY(-3px)', background: 'var(--mui-palette-brandSurface-cardTintHover)' },
+                  '&:hover': { transform: 'translateY(-3px)', background: '#faf6ef' },
                 }}
               >
                 <Box
@@ -95,17 +95,17 @@ export default function ExpertiseSection() {
                     display: 'grid',
                     placeItems: 'center',
                     border: '1px solid var(--mui-palette-primary-main)',
-                    color: 'brandSurface.accentText',
+                    color: '#5c3500',
                     '& svg': { fontSize: 32 },
                   }}
                 >
                   {item.icon}
                 </Box>
                 <Box>
-                  <Typography variant="h3" sx={{ fontSize: 18, mb: 0.75, color: 'text.primary' }}>
+                  <Typography variant="h3" sx={{ fontSize: 18, mb: 0.75, color: 'rgba(0,0,0,0.87)' }}>
                     {item.title}
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary', fontSize: 14, lineHeight: 1.45 }}>
+                  <Typography sx={{ color: 'rgba(0,0,0,0.6)', fontSize: 14, lineHeight: 1.45 }}>
                     {item.description}
                   </Typography>
                 </Box>
