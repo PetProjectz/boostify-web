@@ -3,14 +3,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { brand } from '@/brand';
-
 interface SectionHeadingProps {
   tag: string;
   title: React.ReactNode;
   align?: 'left' | 'center';
-  /** Force white title text (used on always-dark brand sections). */
-  light?: boolean;
 }
 
 /**
@@ -21,7 +17,6 @@ export default function SectionHeading({
   tag,
   title,
   align = 'left',
-  light = false,
 }: SectionHeadingProps) {
   const isCenter = align === 'center';
 
@@ -30,7 +25,7 @@ export default function SectionHeading({
       <Typography
         component="p"
         sx={{
-          color: brand.gold,
+          color: 'brandSurface.accentText',
           fontWeight: 800,
           textTransform: 'uppercase',
           fontSize: 13,
@@ -45,7 +40,7 @@ export default function SectionHeading({
         variant="h2"
         sx={{
           fontSize: 'clamp(30px, 4vw, 44px)',
-          color: light ? '#ffffff' : 'text.primary',
+          color: 'text.primary',
           mb: 2,
         }}
       >
@@ -56,7 +51,7 @@ export default function SectionHeading({
           width: 70,
           height: 3,
           borderRadius: 99,
-          background: `linear-gradient(90deg, ${brand.gold}, transparent)`,
+          background: 'linear-gradient(90deg, var(--mui-palette-primary-main), transparent)',
           mx: isCenter ? 'auto' : 0,
         }}
       />

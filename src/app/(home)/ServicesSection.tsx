@@ -7,17 +7,26 @@ import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
-import { brand } from '@/brand';
+import { DARK_SELECTOR } from '@/cssSelectors';
 import { services } from '@/services';
+
+const darkScrim =
+  'linear-gradient(180deg, var(--mui-palette-brandSurface-scrimStart), var(--mui-palette-brandSurface-scrimEnd))';
 
 export default function ServicesSection() {
   return (
     <Box
       id="services"
       sx={{
-        color: '#fff',
+        color: 'text.primary',
         py: 8,
-        background: `radial-gradient(circle at 50% -20%, ${brand.gold}21, transparent 33%), linear-gradient(180deg, ${brand.navyDeep} 0%, ${brand.navy3} 100%)`,
+        backgroundColor: 'background.default',
+        backgroundImage:
+          'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%)',
+        [DARK_SELECTOR]: {
+          backgroundImage:
+            'radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--mui-palette-primary-main) 13%, transparent), transparent 33%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
+        },
       }}
     >
       <Container>
@@ -26,7 +35,6 @@ export default function ServicesSection() {
             tag="What We Do"
             title="Our Services"
             align="center"
-            light
           />
         </ScrollReveal>
         <Grid container spacing={3} sx={{ mt: 2 }}>
@@ -36,28 +44,34 @@ export default function ServicesSection() {
                 delay={Math.min(index * 0.1, 0.3)}
                 sx={{
                   position: 'relative',
-                  minHeight: 300,
+                  minHeight: { xs: 220, md: 300 },
                   height: '100%',
                   borderRadius: '18px',
                   overflow: 'hidden',
-                  border: `1px solid ${brand.gold}bf`,
+                  border: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 75%, transparent)',
                   boxShadow: '0 20px 45px rgba(0,0,0,0.18)',
                   transition: 'transform 0.25s ease, border-color 0.25s ease',
                   '&:hover': {
                     transform: 'translateY(-5px)',
-                    borderColor: brand.gold,
+                    borderColor: 'primary.main',
                   },
                   '&::before': {
                     content: '""',
                     position: 'absolute',
                     inset: 0,
-                    background: `linear-gradient(180deg, rgba(2,10,22,0.15), rgba(2,10,22,0.9)), url('${service.image}')`,
+                    backgroundImage: `url('${service.imageLight}')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
                     transition: 'transform 0.25s ease',
                   },
                   '&:hover::before': {
                     transform: 'scale(1.04)',
+                  },
+                  [DARK_SELECTOR]: {
+                    '&::before': {
+                      backgroundImage: `${darkScrim}, url('${service.image}')`,
+                    },
                   },
                 }}
               >
@@ -65,14 +79,23 @@ export default function ServicesSection() {
                   sx={{
                     position: 'absolute',
                     inset: 'auto 0 0',
-                    p: 3.5,
+                    p: { xs: 2.25, md: 3.5 },
+                    pt: { xs: 1.75, md: 2.5 },
                     zIndex: 1,
+                    background: 'linear-gradient(180deg, transparent, var(--mui-palette-background-default) 45%)',
+                    borderTop: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 33%, transparent)',
+                    backdropFilter: 'blur(6px)',
+                    [DARK_SELECTOR]: {
+                      background: 'none',
+                      borderTop: 'none',
+                      backdropFilter: 'none',
+                    },
                   }}
                 >
-                  <Typography variant="h3" sx={{ fontSize: 24, mb: 1.25 }}>
+                  <Typography variant="h3" sx={{ fontSize: 24, mb: { xs: 0, md: 1.25 }, color: 'text.primary' }}>
                     {service.title}
                   </Typography>
-                  <Typography sx={{ color: 'rgba(255,255,255,0.82)' }}>
+                  <Typography sx={{ color: 'text.secondary', display: { xs: 'none', md: 'block' } }}>
                     {service.description}
                   </Typography>
                 </Box>

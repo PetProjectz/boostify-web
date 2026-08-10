@@ -6,17 +6,22 @@ import Box from '@mui/material/Box';
 import { alpha } from '@mui/material/styles';
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 
-import { brand } from '@/brand';
-
 interface NewsCardImageProps {
   src: string;
   alt: string;
 }
 
+// This placeholder is intentionally always dark navy regardless of color
+// scheme (like a video player's loading frame), so these are plain literals
+// rather than the adaptive `brandSurface` tokens — using those would make
+// the placeholder flip to cream in light mode, which isn't the intent here.
+const navyDeep = '#020915';
+const navyMid = '#07172d';
+
 const shimmerSx = {
   position: 'absolute' as const,
   inset: 0,
-  background: `linear-gradient(135deg, ${brand.navyDeep}, ${brand.navy3})`,
+  background: `linear-gradient(135deg, ${navyDeep}, ${navyMid})`,
   overflow: 'hidden' as const,
   '&::after': {
     content: '""',
@@ -45,10 +50,10 @@ function GeneratedPlaceholder({ alt }: { alt: string }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: `radial-gradient(circle at 30% 20%, ${brand.gold}26, transparent 55%), linear-gradient(135deg, ${brand.navyDeep}, ${brand.navy3})`,
+        background: `radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--mui-palette-primary-main) 15%, transparent), transparent 55%), linear-gradient(135deg, ${navyDeep}, ${navyMid})`,
       }}
     >
-      <ArticleRoundedIcon sx={{ fontSize: 48, color: alpha(brand.gold2, 0.55) }} />
+      <ArticleRoundedIcon sx={{ fontSize: 48, color: 'color-mix(in srgb, var(--mui-palette-primary-light) 55%, transparent)' }} />
     </Box>
   );
 }
@@ -71,7 +76,7 @@ export default function NewsCardImage({ src, alt }: NewsCardImageProps) {
   }
 
   return (
-    <Box sx={{ height: 190, position: 'relative', bgcolor: brand.navy }}>
+    <Box sx={{ height: 190, position: 'relative', bgcolor: '#020a16' }}>
       <Box sx={{ ...shimmerSx, opacity: loaded ? 0 : 1, transition: 'opacity 0.4s ease' }} />
       <Box
         component="img"

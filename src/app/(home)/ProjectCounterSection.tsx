@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { DARK_SELECTOR } from '@/cssSelectors';
 
 const TARGET = 25;
 const DURATION = 3000;
@@ -46,7 +47,13 @@ export default function ProjectCounterSection() {
   }, []);
 
   return (
-    <Box sx={{ py: { xs: 6, sm: 7 }, bgcolor: 'background.default' }}>
+    <Box
+      sx={{
+        py: { xs: 6, sm: 7 },
+        backgroundColor: 'var(--mui-palette-brandSurface-mid)',
+        [DARK_SELECTOR]: { backgroundColor: 'var(--mui-palette-background-default)' },
+      }}
+    >
       <Container>
         <ScrollReveal>
           <Paper

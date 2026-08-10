@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { DARK_SELECTOR } from '@/cssSelectors';
 
 const paragraphs = [
   'Boostify was born from a vision to revolutionize how businesses connect with their audiences in the digital age. Founded by a team of passionate innovators with diverse expertise in technology, media, and marketing, we have built a company that thrives on creativity, technical excellence, and delivering measurable results.',
@@ -43,9 +44,13 @@ export default function StorySection() {
               overflow: 'hidden',
               boxShadow: '0 25px 55px rgba(4, 12, 29, 0.18)',
               backgroundImage:
-                "linear-gradient(90deg, rgba(2,10,22,0.16), rgba(2,10,22,0.06) 55%, rgba(2,10,22,0.02)), url('/assets/about/boostify-wall.webp')",
+                "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03) 55%, rgba(255,255,255,0)), url('/assets/about/boostify-wall-light.webp')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              [DARK_SELECTOR]: {
+                backgroundImage:
+                  "linear-gradient(90deg, rgba(2,10,22,0.16), rgba(2,10,22,0.06) 55%, rgba(2,10,22,0.02)), url('/assets/about/boostify-wall.webp')",
+              },
             }}
           />
         </Box>

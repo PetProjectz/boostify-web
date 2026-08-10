@@ -6,16 +6,15 @@ import Container from '@mui/material/Container';
 import NextLink from 'next/link';
 import Typography from '@mui/material/Typography';
 
-import { brand } from '@/brand';
 import ScrollReveal from '@/components/common/ScrollReveal';
 
 /**
- * "Ready to Boost Your Business?" call-to-action band. Always rendered in the
- * dark navy + gold brand look.
+ * "Ready to Boost Your Business?" call-to-action band, styled with the
+ * navy + gold brand look, adapted per light/dark color scheme.
  */
 export default function CtaSection() {
   return (
-    <Box sx={{ bgcolor: 'background.default', pb: 2 }}>
+    <Box sx={{ bgcolor: 'background.default', pb: { xs: 6, sm: 8 } }}>
       <Container sx={{ px: { xs: 2, sm: 3 } }}>
         <ScrollReveal
           amount={0.4}
@@ -23,8 +22,9 @@ export default function CtaSection() {
           sx={{
             borderRadius: 3,
             overflow: 'hidden',
-            color: '#fff',
-            background: `radial-gradient(circle at 6% 58%, ${brand.gold2}4d, transparent 20%), linear-gradient(90deg, ${brand.navy3}, ${brand.navyDeep})`,
+            color: 'text.primary',
+            background:
+              'radial-gradient(circle at 6% 58%, color-mix(in srgb, var(--mui-palette-primary-light) 30%, transparent), transparent 20%), linear-gradient(90deg, var(--mui-palette-brandSurface-mid), var(--mui-palette-brandSurface-deep))',
             boxShadow: '0 18px 35px rgba(2, 10, 22, 0.15)',
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: '230px 1fr 210px' },
@@ -41,7 +41,7 @@ export default function CtaSection() {
             sx={{
               width: 140,
               height: 72,
-              color: brand.gold2,
+              color: 'brandSurface.accentText',
               opacity: 0.9,
               display: { xs: 'none', md: 'block' },
             }}
@@ -56,7 +56,7 @@ export default function CtaSection() {
             <Typography variant="h2" sx={{ fontSize: 'clamp(22px, 3vw, 32px)', letterSpacing: '-0.03em' }}>
               Ready to Boost Your Business?
             </Typography>
-            <Typography sx={{ color: 'rgba(255,255,255,0.78)', fontSize: 14, mt: 0.5 }}>
+            <Typography sx={{ color: 'text.secondary', fontSize: 14, mt: 0.5 }}>
               Let&apos;s discuss how we can help you achieve your digital marketing goals.
             </Typography>
           </Box>
@@ -70,7 +70,7 @@ export default function CtaSection() {
               justifySelf: { xs: 'center', md: 'end' },
               minWidth: 160,
               height: 48,
-              background: `linear-gradient(180deg, ${brand.goldSoft}, ${brand.gold})`,
+              background: 'linear-gradient(180deg, var(--mui-palette-brandAccent-goldSoft), var(--mui-palette-primary-main))',
             }}
           >
             Get In Touch&nbsp;›

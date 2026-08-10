@@ -1,6 +1,4 @@
-import { alpha, type Theme } from '@mui/material/styles';
-
-import { brand } from '@/brand';
+import { alpha } from '@mui/material/styles';
 
 export const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -10,13 +8,13 @@ export const heroPoints = [
   'Built for start-ups, enterprises, and exporters',
 ];
 
-export const cardBaseSx = (theme: Theme) => ({
+export const cardBaseSx = {
   position: 'absolute' as const,
   overflow: 'hidden' as const,
   borderRadius: '22px',
-  border: `1px solid ${alpha(brand.gold, 0.45)}`,
-  background: alpha(theme.palette.common.white, 0.04),
-  boxShadow: `0 24px 60px ${alpha(theme.palette.common.black, 0.28)}`,
+  border: '1px solid color-mix(in srgb, var(--mui-palette-primary-main) 45%, transparent)',
+  background: alpha('#8a8f9a', 0.12),
+  boxShadow: '0 24px 60px rgba(0,0,0,0.28)',
   '& img': { objectFit: 'cover' as const, transition: 'transform 0.5s ease' },
   '&:hover img': { transform: 'scale(1.08)' },
-});
+};

@@ -8,14 +8,14 @@ import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Copyright from '@/components/footer/Copyright';
-import { brand } from '@/brand';
+import ThemedImage from '@/components/common/ThemedImage';
+import { DARK_SELECTOR } from '@/cssSelectors';
 import { services } from '@/services';
 import { socialLinks } from '@/socialLinks';
 
@@ -32,13 +32,13 @@ const socials = [
   { icon: <LinkedInIcon fontSize="small" />, href: socialLinks.linkedin, label: 'LinkedIn' },
 ];
 
-const headingSx = { color: '#fff', fontSize: 15, fontWeight: 900, mb: 1.25 } as const;
+const headingSx = { color: 'text.primary', fontSize: 15, fontWeight: 900, mb: 1.25 } as const;
 const linkSx = {
-  color: 'rgba(255,255,255,0.7)',
+  color: 'text.secondary',
   fontSize: 13,
   lineHeight: 1.8,
   display: 'block',
-  '&:hover': { color: brand.gold2 },
+  '&:hover': { color: 'brandSurface.accentText' },
 } as const;
 
 export default function Footer() {
@@ -46,16 +46,39 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        color: '#fff',
+        position: 'relative',
+        color: 'text.primary',
         pt: 4,
-        background: `radial-gradient(circle at 0% 0%, ${brand.gold}14, transparent 24%), linear-gradient(180deg, ${brand.navyDeep} 0%, #030a15 100%)`,
+        background: '#ffffff',
+        boxShadow: '0 -8px 24px color-mix(in srgb, var(--mui-palette-primary-main) 22%, transparent)',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          height: '2px',
+          background:
+            'linear-gradient(90deg, transparent, var(--mui-palette-primary-main) 20%, var(--mui-palette-primary-main) 80%, transparent)',
+        },
+        [DARK_SELECTOR]: {
+          background:
+            'radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--mui-palette-primary-main) 8%, transparent), transparent 24%), linear-gradient(180deg, var(--mui-palette-brandSurface-deep) 0%, var(--mui-palette-brandSurface-mid) 100%)',
+        },
       }}
     >
       <Container>
         <Grid container spacing={4} sx={{ pb: 3 }}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
-              <Image src="/assets/brand/boostify-logo.webp" alt="Boostify" width={80} height={28} style={{ height: 'auto', width: 80, objectFit: 'contain' }} />
+              <ThemedImage
+                lightSrc="/assets/brand/boostify-logo-light.png"
+                darkSrc="/assets/brand/boostify-logo.webp"
+                alt="Boostify"
+                width={80}
+                height={28}
+                style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+              />
             </Box>
             <Typography sx={{ ...linkSx, maxWidth: 320 }}>
               We engineer digital transformation through cutting-edge technology, intelligent
@@ -100,9 +123,9 @@ export default function Footer() {
                   aria-label={s.label}
                   size="small"
                   sx={{
-                    color: '#fff',
-                    border: `1px solid ${brand.gold}`,
-                    '&:hover': { backgroundColor: brand.gold, color: brand.onGold },
+                    color: 'text.primary',
+                    border: '1px solid var(--mui-palette-primary-main)',
+                    '&:hover': { backgroundColor: 'primary.main', color: 'primary.contrastText' },
                   }}
                 >
                   {s.icon}
@@ -112,7 +135,7 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.07)', py: 1.5, textAlign: 'center' }}>
+        <Box sx={{ borderTop: '1px solid', borderColor: 'divider', py: 1.5, textAlign: 'center' }}>
           <Copyright />
         </Box>
       </Container>

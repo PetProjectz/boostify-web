@@ -38,6 +38,8 @@ export default function HeroImageCard({
 
   const parallaxX = useTransform(springX, (v) => v * parallaxDepth);
   const parallaxY = useTransform(springY, (v) => v * (parallaxDepth * 0.6));
+  const bufferX = parallaxDepth + 8;
+  const bufferY = parallaxDepth * 0.6 + 8;
 
   return (
     <MotionBox
@@ -48,9 +50,11 @@ export default function HeroImageCard({
     >
       <motion.div
         style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
+          position: 'absolute',
+          top: -bufferY,
+          bottom: -bufferY,
+          left: -bufferX,
+          right: -bufferX,
           x: isDesktop ? parallaxX : 0,
           y: isDesktop ? parallaxY : 0,
         }}
