@@ -47,7 +47,7 @@ export default function DirectorsSection() {
     <Box sx={{ py: { xs: 4, sm: 5 }, bgcolor: 'background.default' }}>
       <Container>
         <ScrollReveal>
-          <SectionHeading tag="Leadership" title="Meet Our Directors" align="center" />
+          <SectionHeading tag="Leadership" title="Meet Our Founders" align="center" />
         </ScrollReveal>
         <Grid container spacing={2.5} sx={{ mt: 2 }}>
           {directors.map((director, index) => (
