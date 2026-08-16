@@ -59,7 +59,7 @@ export default function Contact() {
       '@type': 'Organization',
       name: 'Boostify',
       url: 'https://boostify.lk',
-      logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
+      logo: 'https://boostify.lk/assets/brand/boostify-logo-light.png',
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+94713598928',

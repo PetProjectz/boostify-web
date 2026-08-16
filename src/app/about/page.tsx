@@ -30,7 +30,7 @@ export default function About() {
       '@type': 'Organization',
       name: 'Boostify',
       url: 'https://boostify.lk',
-      logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
+      logo: 'https://boostify.lk/assets/brand/boostify-logo-light.png',
       description: 'Digital marketing agency combining technology, strategy, and creative excellence for ambitious businesses.',
       areaServed: 'LK',
       knowsAbout: [

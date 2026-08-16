@@ -78,15 +78,24 @@ export default function NavBar() {
   return (
     <StyledAppBar ref={navRef} enableColorOnDark sx={{ zIndex: 50 }}>
       <Container maxWidth="lg" disableGutters>
-        <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, position: 'relative' }}>
-          <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', zIndex: 1 }}>
+        <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: { xs: 2, sm: 3 }, position: 'relative' }}>
+          <Box
+            component={NextLink}
+            href="/"
+            aria-label="Boostify Home"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              zIndex: 1,
+              '& img': { display: 'block', width: { xs: 148, sm: 176 }, height: 'auto' },
+            }}
+          >
             <ThemedImage
-              lightSrc="/assets/brand/boostify-logo-light.png"
-              darkSrc="/assets/brand/boostify-logo.webp"
+              lightSrc="/assets/brand/boostify-logo-light.webp"
+              darkSrc="/assets/brand/boostify-logo-dark.webp"
               alt="Boostify"
-              width={80}
-              height={28}
-              style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+              width={176}
+              height={32}
               priority
             />
           </Box>

@@ -31,7 +31,7 @@ function Home() {
     '@type': 'Organization',
     name: 'Boostify',
     url: 'https://boostify.lk',
-    logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
+    logo: 'https://boostify.lk/assets/brand/boostify-logo-light.png',
     description:
       "Sri Lanka's digital and AI transformation partner, combining technology, strategy, and creative excellence for ambitious businesses.",
     areaServed: 'LK',

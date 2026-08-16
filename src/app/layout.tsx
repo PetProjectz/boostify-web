@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
     images: [
       {
-        url: '/assets/brand/boostify-logo.webp',
+        url: '/assets/brand/boostify-og.png',
         width: 1200,
         height: 630,
         alt: 'Boostify Logo',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: 'Boostify - Digital Transformation Partner',
     description:
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
-    images: ['/assets/brand/boostify-logo.webp'],
+    images: ['/assets/brand/boostify-og.png'],
   },
   robots: {
     index: true,

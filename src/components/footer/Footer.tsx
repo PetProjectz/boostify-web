@@ -70,14 +70,22 @@ export default function Footer() {
       <Container>
         <Grid container spacing={4} sx={{ pb: 3 }}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
+            <Box
+              component={NextLink}
+              href="/"
+              aria-label="Boostify Home"
+              sx={{
+                display: 'inline-flex',
+                mb: 2,
+                '& img': { display: 'block', width: 176, height: 'auto' },
+              }}
+            >
               <ThemedImage
-                lightSrc="/assets/brand/boostify-logo-light.png"
-                darkSrc="/assets/brand/boostify-logo.webp"
+                lightSrc="/assets/brand/boostify-logo-light.webp"
+                darkSrc="/assets/brand/boostify-logo-dark.webp"
                 alt="Boostify"
-                width={80}
-                height={28}
-                style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+                width={176}
+                height={32}
               />
             </Box>
             <Typography sx={{ ...linkSx, maxWidth: 320 }}>
