@@ -7,6 +7,7 @@ import DirectorsSection from '@/app/about/DirectorsSection';
 import ExpertiseSection from '@/app/about/ExpertiseSection';
 import IndustriesSection from '@/app/about/IndustriesSection';
 import CtaSection from '@/components/common/CtaSection';
+import { ogImages, organizationLogo } from '@/seo';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     title: 'About | Boostify',
     description: 'We help businesses grow, connect, and succeed in the digital world.',
     url: 'https://boostify.lk/about',
+    images: ogImages,
   },
   alternates: {
     canonical: 'https://boostify.lk/about',
@@ -30,7 +32,7 @@ export default function About() {
       '@type': 'Organization',
       name: 'Boostify',
       url: 'https://boostify.lk',
-      logo: 'https://boostify.lk/assets/brand/boostify-logo-light.png',
+      logo: organizationLogo,
       description: 'Digital marketing agency combining technology, strategy, and creative excellence for ambitious businesses.',
       areaServed: 'LK',
       knowsAbout: [

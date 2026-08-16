@@ -9,6 +9,7 @@ import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import theme from '@/theme';
 import AppShell from '@/app/AppShell';
 import ThemeProvider from '@/contexts/ThemeContext';
+import { ogImages, twitterImages } from '@/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://boostify.lk'),
@@ -48,21 +49,14 @@ export const metadata: Metadata = {
     title: 'Boostify - Digital Transformation Partner',
     description:
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
-    images: [
-      {
-        url: '/assets/brand/boostify-og.png',
-        width: 1200,
-        height: 630,
-        alt: 'Boostify Logo',
-      },
-    ],
+    images: ogImages,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Boostify - Digital Transformation Partner',
     description:
       'Boostify combines technology, strategy, and creative excellence to help ambitious businesses grow faster online.',
-    images: ['/assets/brand/boostify-og.png'],
+    images: twitterImages,
   },
   robots: {
     index: true,

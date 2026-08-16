@@ -23,6 +23,7 @@ import ContactForm from '@/app/contact/ContactForm';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import { DARK_SELECTOR } from '@/cssSelectors';
 import { socialLinks } from '@/socialLinks';
+import { ogImages, organizationLogo } from '@/seo';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     title: 'Contact | Boostify',
     description: 'Ready to boost your digital presence? Get in touch with us today.',
     url: 'https://boostify.lk/contact',
+    images: ogImages,
   },
   alternates: {
     canonical: 'https://boostify.lk/contact',
@@ -59,7 +61,7 @@ export default function Contact() {
       '@type': 'Organization',
       name: 'Boostify',
       url: 'https://boostify.lk',
-      logo: 'https://boostify.lk/assets/brand/boostify-logo-light.png',
+      logo: organizationLogo,
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+94713598928',

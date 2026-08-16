@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import Image from 'next/image';
 import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Copyright from '@/components/footer/Copyright';
-import ThemedImage from '@/components/common/ThemedImage';
 import { DARK_SELECTOR } from '@/cssSelectors';
 import { services } from '@/services';
 import { socialLinks } from '@/socialLinks';
@@ -80,9 +80,8 @@ export default function Footer() {
                 '& img': { display: 'block', width: 176, height: 'auto' },
               }}
             >
-              <ThemedImage
-                lightSrc="/assets/brand/boostify-logo-light.webp"
-                darkSrc="/assets/brand/boostify-logo-dark.webp"
+              <Image
+                src="/assets/brand/boostify-logo.webp"
                 alt="Boostify"
                 width={176}
                 height={32}
