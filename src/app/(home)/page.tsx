@@ -8,6 +8,7 @@ import ClientsSection from '@/app/(home)/ClientsSection';
 import WhyChooseUsSection from '@/app/(home)/WhyChooseUsSection';
 import CtaSection from '@/components/common/CtaSection';
 import { socialLinks } from '@/socialLinks';
+import { ogImages, organizationLogo } from '@/seo';
 
 export const metadata: Metadata = {
   description:
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     description:
       "Boostify is Sri Lanka's trusted digital and AI transformation partner, helping ambitious businesses grow faster and lead confidently with technology, strategy, and creative excellence.",
     url: 'https://boostify.lk',
+    images: ogImages,
   },
   alternates: {
     canonical: 'https://boostify.lk',
@@ -31,7 +33,7 @@ function Home() {
     '@type': 'Organization',
     name: 'Boostify',
     url: 'https://boostify.lk',
-    logo: 'https://boostify.lk/assets/brand/boostify-logo.webp',
+    logo: organizationLogo,
     description:
       "Sri Lanka's digital and AI transformation partner, combining technology, strategy, and creative excellence for ambitious businesses.",
     areaServed: 'LK',

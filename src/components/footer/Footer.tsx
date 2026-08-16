@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import Image from 'next/image';
 import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Copyright from '@/components/footer/Copyright';
-import ThemedImage from '@/components/common/ThemedImage';
 import { DARK_SELECTOR } from '@/cssSelectors';
 import { services } from '@/services';
 import { socialLinks } from '@/socialLinks';
@@ -70,14 +70,21 @@ export default function Footer() {
       <Container>
         <Grid container spacing={4} sx={{ pb: 3 }}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Box component={NextLink} href="/" sx={{ display: 'inline-flex', mb: 1.5 }}>
-              <ThemedImage
-                lightSrc="/assets/brand/boostify-logo-light.png"
-                darkSrc="/assets/brand/boostify-logo.webp"
+            <Box
+              component={NextLink}
+              href="/"
+              aria-label="Boostify Home"
+              sx={{
+                display: 'inline-flex',
+                mb: 2,
+                '& img': { display: 'block', width: 176, height: 'auto' },
+              }}
+            >
+              <Image
+                src="/assets/brand/boostify-logo.webp"
                 alt="Boostify"
-                width={80}
-                height={28}
-                style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+                width={176}
+                height={32}
               />
             </Box>
             <Typography sx={{ ...linkSx, maxWidth: 320 }}>

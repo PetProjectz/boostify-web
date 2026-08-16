@@ -5,6 +5,7 @@ import PageHero from '@/components/common/PageHero';
 import NewsSection from '@/app/news/NewsSection';
 import NewsSectionFallback from '@/app/news/NewsSectionFallback';
 import CtaSection from '@/components/common/CtaSection';
+import { ogImages } from '@/seo';
 
 export const metadata: Metadata = {
   title: 'News',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     title: 'News | Boostify',
     description: 'The latest news, updates, and insights from the industry.',
     url: 'https://boostify.lk/news',
+    images: ogImages,
   },
   alternates: {
     canonical: 'https://boostify.lk/news',

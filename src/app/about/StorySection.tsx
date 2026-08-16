@@ -44,7 +44,7 @@ export default function StorySection() {
               overflow: 'hidden',
               boxShadow: '0 25px 55px rgba(4, 12, 29, 0.18)',
               backgroundImage:
-                "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03) 55%, rgba(255,255,255,0)), url('/assets/about/boostify-wall-light.webp')",
+                "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03) 55%, rgba(255,255,255,0)), url('/assets/about/boostify-wall.webp')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               [DARK_SELECTOR]: {

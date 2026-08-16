@@ -12,12 +12,12 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
+import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import ColorModeToggle from '@/components/navBar/ColorModeToggle';
-import ThemedImage from '@/components/common/ThemedImage';
 import useNavLineHandoff from '@/hooks/useNavLineHandoff';
 import { DARK_SELECTOR, NAV_LINE_ATTR } from '@/cssSelectors';
 
@@ -78,15 +78,23 @@ export default function NavBar() {
   return (
     <StyledAppBar ref={navRef} enableColorOnDark sx={{ zIndex: 50 }}>
       <Container maxWidth="lg" disableGutters>
-        <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, position: 'relative' }}>
-          <Box component={NextLink} href="/" aria-label="Boostify Home" sx={{ display: 'flex', alignItems: 'center', zIndex: 1 }}>
-            <ThemedImage
-              lightSrc="/assets/brand/boostify-logo-light.png"
-              darkSrc="/assets/brand/boostify-logo.webp"
+        <Box sx={{ minHeight: '78px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: { xs: 2, sm: 3 }, position: 'relative' }}>
+          <Box
+            component={NextLink}
+            href="/"
+            aria-label="Boostify Home"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              zIndex: 1,
+              '& img': { display: 'block', width: { xs: 148, sm: 176 }, height: 'auto' },
+            }}
+          >
+            <Image
+              src="/assets/brand/boostify-logo.webp"
               alt="Boostify"
-              width={80}
-              height={28}
-              style={{ height: 'auto', width: 80, objectFit: 'contain' }}
+              width={176}
+              height={32}
               priority
             />
           </Box>
