@@ -15,45 +15,16 @@ import AutoModeRoundedIcon from '@mui/icons-material/AutoModeRounded';
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import { DARK_SELECTOR } from '@/cssSelectors';
+import { expertise, type ExpertiseTitle } from '@/aboutContent';
 
-const expertise = [
-  {
-    icon: <CodeRoundedIcon />,
-    title: 'Web & Mobile Development',
-    description:
-      'Custom websites and mobile applications designed with modern technologies, intuitive user experiences, and scalable architectures.',
-  },
-  {
-    icon: <CampaignRoundedIcon />,
-    title: 'Digital Marketing',
-    description:
-      'Performance-driven campaigns that increase visibility, generate quality leads, and maximize your return on investment.',
-  },
-  {
-    icon: <ShareRoundedIcon />,
-    title: 'Social Media Management',
-    description:
-      "Creative content planning, audience engagement, and brand growth strategies across today's leading social platforms.",
-  },
-  {
-    icon: <AutoModeRoundedIcon />,
-    title: 'Business Process Automation',
-    description:
-      'Intelligent workflows that cut manual effort, reduce errors, and help your teams operate faster with greater consistency.',
-  },
-  {
-    icon: <BrushRoundedIcon />,
-    title: 'Brand Identity & Design',
-    description:
-      'Building memorable brands through professional logos, visual identity systems, and compelling marketing materials.',
-  },
-  {
-    icon: <MovieRoundedIcon />,
-    title: 'Creative Media Production',
-    description:
-      'Professional photography, videography, promotional content, and visual storytelling that strengthens your brand presence.',
-  },
-];
+const expertiseIcons: Record<ExpertiseTitle, React.ReactNode> = {
+  'Web & Mobile Development': <CodeRoundedIcon />,
+  'Digital Marketing': <CampaignRoundedIcon />,
+  'Social Media Management': <ShareRoundedIcon />,
+  'Business Process Automation': <AutoModeRoundedIcon />,
+  'Brand Identity & Design': <BrushRoundedIcon />,
+  'Creative Media Production': <MovieRoundedIcon />,
+};
 
 export default function ExpertiseSection() {
   return (
@@ -105,7 +76,7 @@ export default function ExpertiseSection() {
                     '& svg': { fontSize: 32 },
                   }}
                 >
-                  {item.icon}
+                  {expertiseIcons[item.title]}
                 </Box>
                 <Box>
                   <Typography

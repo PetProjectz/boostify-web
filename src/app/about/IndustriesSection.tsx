@@ -15,15 +15,16 @@ import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
 
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import { industries, type IndustryTitle } from '@/aboutContent';
 
-const industries = [
-  { icon: <FactoryRoundedIcon />, title: 'Manufacturing', description: 'Automation, production systems, industrial branding, and digital transformation.' },
-  { icon: <MonitorHeartRoundedIcon />, title: 'Healthcare', description: 'Healthcare marketing, patient engagement, and digital service platforms.' },
-  { icon: <SchoolRoundedIcon />, title: 'Education', description: 'Educational institutions, training centers, and e-learning platforms.' },
-  { icon: <ShoppingCartRoundedIcon />, title: 'Retail & E-Commerce', description: 'Online stores, customer acquisition, digital advertising, and sales optimization.' },
-  { icon: <HotelRoundedIcon />, title: 'Hospitality & Tourism', description: 'Hotels, restaurants, travel businesses, and destination marketing.' },
-  { icon: <RocketLaunchRoundedIcon />, title: 'Startups & SMEs', description: 'Complete digital solutions for growing businesses, from branding to scalable technology platforms.' },
-];
+const industryIcons: Record<IndustryTitle, React.ReactNode> = {
+  Manufacturing: <FactoryRoundedIcon />,
+  Healthcare: <MonitorHeartRoundedIcon />,
+  Education: <SchoolRoundedIcon />,
+  'Retail & E-Commerce': <ShoppingCartRoundedIcon />,
+  'Hospitality & Tourism': <HotelRoundedIcon />,
+  'Startups & SMEs': <RocketLaunchRoundedIcon />,
+};
 
 export default function IndustriesSection() {
   return (
@@ -58,7 +59,7 @@ export default function IndustriesSection() {
                       '& svg': { fontSize: 44 },
                     }}
                   >
-                    {industry.icon}
+                    {industryIcons[industry.title]}
                   </Box>
                   <Typography variant="h3" sx={{ fontSize: 14, mb: 1, color: 'text.primary' }}>
                     {industry.title}

@@ -7,12 +7,7 @@ import Typography from '@mui/material/Typography';
 import SectionHeading from '@/components/common/SectionHeading';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import { DARK_SELECTOR } from '@/cssSelectors';
-
-const paragraphs = [
-  'Boostify was born from a vision to revolutionize how businesses connect with their audiences in the digital age. Founded by a team of passionate innovators with diverse expertise in technology, media, and marketing, we have built a company that thrives on creativity, technical excellence, and delivering measurable results.',
-  'Our journey began with a simple belief: that every business, regardless of size, deserves access to world class digital marketing solutions. Today, we combine cutting-edge technology with strategic thinking to help our clients not just compete, but dominate in their respective markets.',
-  'With backgrounds spanning software and telecommunications engineering to broadcast media, our team brings a unique perspective to digital marketing. We understand both the technical infrastructure that powers digital platforms and the creative storytelling that captures audiences.',
-];
+import { storyParagraphs } from '@/aboutContent';
 
 export default function StorySection() {
   return (
@@ -28,7 +23,7 @@ export default function StorySection() {
         >
           <ScrollReveal>
             <SectionHeading tag="Our Story" title="Our Background" />
-            {paragraphs.map((text, i) => (
+            {storyParagraphs.map((text, i) => (
               <Typography key={i} sx={{ color: 'text.secondary', fontSize: 15, lineHeight: 1.7, mb: 2.5 }}>
                 {text}
               </Typography>
