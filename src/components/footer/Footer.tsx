@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
 import Link from '@mui/material/Link';
-import NextLink from 'next/link';
+import NextLink from '@/components/common/NextLink';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
