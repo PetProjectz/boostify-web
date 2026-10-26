@@ -23,6 +23,7 @@ import ContactForm from '@/app/contact/ContactForm';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import { DARK_SELECTOR } from '@/cssSelectors';
 import { socialLinks } from '@/socialLinks';
+import { contactInfo } from '@/contactInfo';
 import { ogImages, organizationLogo } from '@/seo';
 
 export const metadata: Metadata = {
@@ -40,10 +41,10 @@ export const metadata: Metadata = {
 };
 
 const contactItems = [
-  { icon: <LocationOnRoundedIcon />, title: 'Location', value: 'Kurunegala, Sri Lanka' },
-  { icon: <EmailRoundedIcon />, title: 'Email', value: 'info@boostify.lk', href: 'mailto:info@boostify.lk' },
-  { icon: <PhoneRoundedIcon />, title: 'Phone', value: '+94 71 359 8928', href: 'tel:+94713598928' },
-  { icon: <WhatsAppIcon />, title: 'WhatsApp', value: '+94 71 359 8928', href: 'https://wa.me/94713598928' },
+  { icon: <LocationOnRoundedIcon />, title: 'Location', value: contactInfo.location },
+  { icon: <EmailRoundedIcon />, title: 'Email', value: contactInfo.email, href: `mailto:${contactInfo.email}` },
+  { icon: <PhoneRoundedIcon />, title: 'Phone', value: contactInfo.phone, href: contactInfo.phoneHref },
+  { icon: <WhatsAppIcon />, title: 'WhatsApp', value: contactInfo.whatsapp, href: contactInfo.whatsappHref },
 ];
 
 const socials = [
@@ -66,7 +67,7 @@ export default function Contact() {
         '@type': 'ContactPoint',
         telephone: '+94713598928',
         contactType: 'Customer Service',
-        email: 'info@boostify.lk',
+        email: contactInfo.email,
         areaServed: 'LK',
         availableLanguage: ['en'],
       },

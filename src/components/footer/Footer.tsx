@@ -18,6 +18,7 @@ import Copyright from '@/components/footer/Copyright';
 import { DARK_SELECTOR } from '@/cssSelectors';
 import { services } from '@/services';
 import { socialLinks } from '@/socialLinks';
+import { contactInfo } from '@/contactInfo';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -113,12 +114,12 @@ export default function Footer() {
 
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography sx={headingSx}>Contact Info</Typography>
-            <Typography sx={linkSx}>Kurunegala, Sri Lanka</Typography>
-            <Link href="mailto:info@boostify.lk" sx={linkSx}>
-              info@boostify.lk
+            <Typography sx={linkSx}>{contactInfo.location}</Typography>
+            <Link href={`mailto:${contactInfo.email}`} sx={linkSx}>
+              {contactInfo.email}
             </Link>
-            <Link href="tel:+94713598928" sx={linkSx}>
-              +94 71 359 8928
+            <Link href={contactInfo.phoneHref} sx={linkSx}>
+              {contactInfo.phone}
             </Link>
             <Stack direction="row" spacing={1} sx={{ mt: 1.5 }}>
               {socials.map((s) => (
