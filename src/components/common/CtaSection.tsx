@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import NextLink from 'next/link';
+import NextLink from '@/components/common/NextLink';
 import Typography from '@mui/material/Typography';
 
 import ScrollReveal from '@/components/common/ScrollReveal';
